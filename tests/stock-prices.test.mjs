@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { selectPrice, collectPrices } from '../scripts/refresh_stock_prices.mjs';
+const asset={platform:'flap',quote:'TESTB',quoteAddress:'0xabc',quoteAssetClass:'equity'};
+const pair={chainId:'bsc',baseToken:{address:'0xabc'},quoteToken:{address:'0x55d398326f99059ff775485246999027b3197955'},liquidity:{usd:200_000},priceUsd:'100',priceNative:'100.1',pairAddress:'0xpool',url:'https://dexscreener.com/bsc/0xpool'};
+assert.equal(selectPrice([pair],asset,0.999).priceUsdt,100.1);
+assert.equal(selectPrice([{...pair,liquidity:{usd:99_999}}],asset,1).priceUsd,null);
+assert.equal(selectPrice([{...pair,baseToken:pair.quoteToken,quoteToken:pair.baseToken}],asset,1).priceUsd,null);
+assert.equal(selectPrice([{...pair,chainId:'robinhood'}],asset,1).priceUsd,null);
+assert.equal(selectPrice([pair,{...pair,liquidity:{usd:300_000},priceNative:'101'}],asset,1).priceUsdt,101);
+const pons={...asset,platform:'ponsv2'};
+assert.equal(selectPrice([{...pair,chainId:'robinhood',quoteToken:{address:'0x0bd7d308f8e1639fab988df18a8011f41eacad73'}}],pons,0.5).priceUsdt,200);
+await assert.rejects(collectPrices({test:asset},async()=>{throw new Error('network');},1),/network/);
+await assert.rejects(collectPrices({test:asset},async()=>[{...pair,priceUsd:null}],1),/price missing/);
+await assert.rejects(collectPrices({test:asset},async()=>[pair],0),/USDT/);
+console.log('Stock price source and failure-preservation tests passed');

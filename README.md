@@ -1,5 +1,7 @@
 # Stock quote route liquidity
 
+Stock Quote prices refresh daily at 01:30 UTC (09:30 Asia/Shanghai), independently of weekly liquidity admission. DEX Screener prices come from the deepest directly matched stock/WETH (Robinhood) or stock/USDT (BSC) pool with at least USD 100,000 liquidity. These are token prices, not original listed-share quotes. BSC uses the direct USDT quote; Robinhood USD prices convert using CoinGecko USDT/USD. Missing coverage stays null; failed requests or missing prices in qualifying pools preserve the previous complete snapshot. GitHub may delay scheduled runs.
+
 Public market liquidity snapshots for Robinhood Chain WETH routes and BSC USDT routes.
 
 GitHub Actions refreshes the snapshot every Monday at 01:00 UTC (09:00 Asia/Shanghai). Scheduled runs may be delayed by GitHub. Manual refresh is available through workflow_dispatch.
