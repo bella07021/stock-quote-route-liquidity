@@ -1,0 +1,534 @@
+{
+  "flap-spcxb": {
+    "platform": "flap",
+    "quote": "SPCXB",
+    "quoteName": "SpaceX",
+    "quoteAddress": "0xbe9D156892E55e7154BcD3cB0FEA677F9D3103E1",
+    "quoteAssetClass": "equity"
+  },
+  "flap-skhyb": {
+    "platform": "flap",
+    "quote": "SKHYB",
+    "quoteName": "SK Hynix",
+    "quoteAddress": "0xCA750eF65f295BBECd685Abf54e82CAf297BDB61",
+    "quoteAssetClass": "equity"
+  },
+  "flap-spyb": {
+    "platform": "flap",
+    "quote": "SPYB",
+    "quoteName": "SPY",
+    "quoteAddress": "0x7138b48df7D98D7e3cc221BfE7192D0a178182D8",
+    "quoteAssetClass": "equity"
+  },
+  "flap-xaut": {
+    "platform": "flap",
+    "quote": "XAUT",
+    "quoteName": "Tether Gold",
+    "quoteAddress": "0x21cAef8A43163Eea865baeE23b9C2E327696A3bf",
+    "quoteAssetClass": "equity"
+  },
+  "flap-qqqb": {
+    "platform": "flap",
+    "quote": "QQQB",
+    "quoteName": "Invesco QQQ Trust",
+    "quoteAddress": "0x205812CdBed920aFf76C6580abD681a46D11efc7",
+    "quoteAssetClass": "equity"
+  },
+  "flap-nvdab": {
+    "platform": "flap",
+    "quote": "NVDAB",
+    "quoteName": "NVIDIA Corp",
+    "quoteAddress": "0x02Fca66C1D1aFB4E2A7884261eB00F63598a7436",
+    "quoteAssetClass": "equity"
+  },
+  "flap-aaplb": {
+    "platform": "flap",
+    "quote": "AAPLB",
+    "quoteName": "Apple",
+    "quoteAddress": "0x431a3BEE82E2ca41e49895CbECE5bB0F76A89b7A",
+    "quoteAssetClass": "equity"
+  },
+  "flap-tslab": {
+    "platform": "flap",
+    "quote": "TSLAB",
+    "quoteName": "Tesla",
+    "quoteAddress": "0x5b1910eAaD6450E50f816082Aa078C41F10C292f",
+    "quoteAssetClass": "equity"
+  },
+  "flap-msftb": {
+    "platform": "flap",
+    "quote": "MSFTB",
+    "quoteName": "Microsoft",
+    "quoteAddress": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0",
+    "quoteAssetClass": "equity"
+  },
+  "flap-googlb": {
+    "platform": "flap",
+    "quote": "GOOGLB",
+    "quoteName": "Alphabet",
+    "quoteAddress": "0x3F53De71c126BdaBAe20f9cD64848d317f6C3238",
+    "quoteAssetClass": "equity"
+  },
+  "flap-hoodb": {
+    "platform": "flap",
+    "quote": "HOODB",
+    "quoteName": "Robinhood",
+    "quoteAddress": "0xA394dCEa3fd3847fD793afBFd163E2e3858B7c65",
+    "quoteAssetClass": "equity"
+  },
+  "flap-babab": {
+    "platform": "flap",
+    "quote": "BABAB",
+    "quoteName": "Alibaba",
+    "quoteAddress": "0x4eF9d3062c7F6ebA4AAE4990c5036598C6eff4ec",
+    "quoteAssetClass": "equity"
+  },
+  "flap-gmeb": {
+    "platform": "flap",
+    "quote": "GMEB",
+    "quoteName": "GameStop",
+    "quoteAddress": "0x46cEeFDa28Dd7207059ed19B0acdc026955bb15C",
+    "quoteAssetClass": "equity"
+  },
+  "flap-nflxb": {
+    "platform": "flap",
+    "quote": "NFLXB",
+    "quoteName": "Netflix",
+    "quoteAddress": "0xD6829Ea836b6FA224d099D40E54B31262f874631",
+    "quoteAssetClass": "equity"
+  },
+  "flap-mstrb": {
+    "platform": "flap",
+    "quote": "MSTRB",
+    "quoteName": "Strategy",
+    "quoteAddress": "0xE87afb3076AeB0f9B14E368DE8145ae6a2826A14",
+    "quoteAssetClass": "equity"
+  },
+  "flap-djtb": {
+    "platform": "flap",
+    "quote": "DJTB",
+    "quoteName": "Trump Media & Technology Group Corp",
+    "quoteAddress": "0xF2ec508422174Ee564de98187db9359D318AFB6b",
+    "quoteAssetClass": "equity"
+  },
+  "flap-soxsb": {
+    "platform": "flap",
+    "quote": "SOXSB",
+    "quoteName": "Direxion Semiconductor Bear 3X ETF",
+    "quoteAddress": "0xE28Cd11C99AF2df76bb8aDA4Cd0ef3904378280F",
+    "quoteAssetClass": "equity"
+  },
+  "flap-soxlb": {
+    "platform": "flap",
+    "quote": "SOXLB",
+    "quoteName": "Semicon Bull 3X ETF",
+    "quoteAddress": "0xd97d097a89113fa59b76c572E5b2Eb647E8eefaf",
+    "quoteAssetClass": "equity"
+  },
+  "flap-mrnab": {
+    "platform": "flap",
+    "quote": "MRNAB",
+    "quoteName": "Moderna",
+    "quoteAddress": "0x5fd86da9B05abE396fe9d02a4A213A7c00556503",
+    "quoteAssetClass": "equity"
+  },
+  "flap-flncb": {
+    "platform": "flap",
+    "quote": "FLNCB",
+    "quoteName": "Fluence Energy",
+    "quoteAddress": "0x4af1D41cd9dD950dcA43984b43aaA2A8702714Ac",
+    "quoteAssetClass": "equity"
+  },
+  "flap-fxion": {
+    "platform": "flap",
+    "quote": "FXIon",
+    "quoteName": "iShares China Large-Cap ETF",
+    "quoteAddress": "0x9b8E987e6fEc8Cf1380C4dcA7071e2C7853AEEA1",
+    "quoteAssetClass": "equity"
+  },
+  "flap-bmnrb": {
+    "platform": "flap",
+    "quote": "BMNRB",
+    "quoteName": "BitMine Immersion Technologies",
+    "quoteAddress": "0x3548Da95a9eFFE481e8604664d75e95821e557F5",
+    "quoteAssetClass": "equity"
+  },
+  "flap-bilion": {
+    "platform": "flap",
+    "quote": "BILIon",
+    "quoteName": "Bilibili",
+    "quoteAddress": "0x91fc7371d6dE682A1e8CFcB4EB7dA693312A03a4",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-aapl": {
+    "platform": "ponsv2",
+    "quote": "AAPL",
+    "quoteName": "Apple",
+    "quoteAddress": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-amc": {
+    "platform": "ponsv2",
+    "quote": "AMC",
+    "quoteName": "AMC Entertainment",
+    "quoteAddress": "0x05a3d1cd21d0c88145e82600e62e7e496e0f222b",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-amd": {
+    "platform": "ponsv2",
+    "quote": "AMD",
+    "quoteName": "Advanced Micro Devices",
+    "quoteAddress": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-amzn": {
+    "platform": "ponsv2",
+    "quote": "AMZN",
+    "quoteName": "Amazon",
+    "quoteAddress": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-baba": {
+    "platform": "ponsv2",
+    "quote": "BABA",
+    "quoteName": "Alibaba",
+    "quoteAddress": "0xad25ac6c84d497db898fa1e8387bf6af3532a1c4",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-bb": {
+    "platform": "ponsv2",
+    "quote": "BB",
+    "quoteName": "BlackBerry",
+    "quoteAddress": "0x48E39E56aCdbA37b09020C0b734A613C9a2f100A",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-be": {
+    "platform": "ponsv2",
+    "quote": "BE",
+    "quoteName": "Bloom Energy",
+    "quoteAddress": "0x822cc93ffd030293e9842c30bbd678f530701867",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-bull": {
+    "platform": "ponsv2",
+    "quote": "BULL",
+    "quoteName": "Webull",
+    "quoteAddress": "0xcef9027c7d6985b85f0ba431125073529a947a68",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-coin": {
+    "platform": "ponsv2",
+    "quote": "COIN",
+    "quoteName": "Coinbase",
+    "quoteAddress": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-cost": {
+    "platform": "ponsv2",
+    "quote": "COST",
+    "quoteName": "Costco",
+    "quoteAddress": "0x4EA005168D7F09a7A0Ba9D1DEf21a479950E44C2",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-crcl": {
+    "platform": "ponsv2",
+    "quote": "CRCL",
+    "quoteName": "Circle Internet Group",
+    "quoteAddress": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-dell": {
+    "platform": "ponsv2",
+    "quote": "DELL",
+    "quoteName": "Dell Technologies",
+    "quoteAddress": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-djt": {
+    "platform": "ponsv2",
+    "quote": "DJT",
+    "quoteName": "Trump Media & Technology Group",
+    "quoteAddress": "0x1D11f0496982706C5e14A514D4E79F2e6BdE4516",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-f": {
+    "platform": "ponsv2",
+    "quote": "F",
+    "quoteName": "Ford Motor",
+    "quoteAddress": "0x25c288e6d899b9bc30160965ad9644c67e73be0c",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-fig": {
+    "platform": "ponsv2",
+    "quote": "FIG",
+    "quoteName": "Figma",
+    "quoteAddress": "0x41F4267525a8AFf329540eF24fD83d9044758B33",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-gld": {
+    "platform": "ponsv2",
+    "quote": "GLD",
+    "quoteName": "SPDR Gold Shares",
+    "quoteAddress": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-gme": {
+    "platform": "ponsv2",
+    "quote": "GME",
+    "quoteName": "GameStop",
+    "quoteAddress": "0x1b0E319c6A659F002271B69dB8A7df2F911c153E",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-googl": {
+    "platform": "ponsv2",
+    "quote": "GOOGL",
+    "quoteName": "Alphabet Class A",
+    "quoteAddress": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-hims": {
+    "platform": "ponsv2",
+    "quote": "HIMS",
+    "quoteName": "Hims & Hers Health",
+    "quoteAddress": "0xCceE82fE024c36fA15E1005edE3E9e4787e23D09",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-ibm": {
+    "platform": "ponsv2",
+    "quote": "IBM",
+    "quoteName": "IBM",
+    "quoteAddress": "0x980dcf6766fa79f5cf0c4aadb3ab477ff15a9619",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-inda": {
+    "platform": "ponsv2",
+    "quote": "INDA",
+    "quoteName": "iShares MSCI India ETF",
+    "quoteAddress": "0xacef2e09adb47ad6abebad9ff06689e60615c2b6",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-jnj": {
+    "platform": "ponsv2",
+    "quote": "JNJ",
+    "quoteName": "Johnson & Johnson",
+    "quoteAddress": "0x03DfbBE0AC4E7bCDaFd08eD41A400326B77D8c80",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-lly": {
+    "platform": "ponsv2",
+    "quote": "LLY",
+    "quoteName": "Eli Lilly",
+    "quoteAddress": "0x8005d266423c7ea827372c9c864491e5786600ea",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-lulu": {
+    "platform": "ponsv2",
+    "quote": "LULU",
+    "quoteName": "Lululemon Athletica",
+    "quoteAddress": "0x4e62068525Ab11FE768e29dfD00ef909B9803016",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-meta": {
+    "platform": "ponsv2",
+    "quote": "META",
+    "quoteName": "Meta Platforms",
+    "quoteAddress": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-mrna": {
+    "platform": "ponsv2",
+    "quote": "MRNA",
+    "quoteName": "Moderna",
+    "quoteAddress": "0x43B07D15cE533bEc5476d70C22a78a1B2B662155",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-mrvl": {
+    "platform": "ponsv2",
+    "quote": "MRVL",
+    "quoteName": "Marvell Technology",
+    "quoteAddress": "0x62fd0668e10D8B72339BE2DCF7643001688ff13B",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-msft": {
+    "platform": "ponsv2",
+    "quote": "MSFT",
+    "quoteName": "Microsoft",
+    "quoteAddress": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-mstr": {
+    "platform": "ponsv2",
+    "quote": "MSTR",
+    "quoteName": "Strategy",
+    "quoteAddress": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-mu": {
+    "platform": "ponsv2",
+    "quote": "MU",
+    "quoteName": "Micron Technology",
+    "quoteAddress": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-nvda": {
+    "platform": "ponsv2",
+    "quote": "NVDA",
+    "quoteName": "NVIDIA",
+    "quoteAddress": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-nflx": {
+    "platform": "ponsv2",
+    "quote": "NFLX",
+    "quoteName": "Netflix",
+    "quoteAddress": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-nu": {
+    "platform": "ponsv2",
+    "quote": "NU",
+    "quoteName": "Nu",
+    "quoteAddress": "0x408c14038a04f7bd235329e26d2bf569ee20e250",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-pfe": {
+    "platform": "ponsv2",
+    "quote": "PFE",
+    "quoteName": "Pfizer",
+    "quoteAddress": "0x7066A64c24e4206CD62E83bf198c1E7EB361F51e",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-pltr": {
+    "platform": "ponsv2",
+    "quote": "PLTR",
+    "quoteName": "Palantir Technologies",
+    "quoteAddress": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-qqq": {
+    "platform": "ponsv2",
+    "quote": "QQQ",
+    "quoteName": "Invesco QQQ",
+    "quoteAddress": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-rblx": {
+    "platform": "ponsv2",
+    "quote": "RBLX",
+    "quoteName": "Roblox",
+    "quoteAddress": "0xF0C4BF4C582cb3836e98394b1d4e7B7281101bE8",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-rddt": {
+    "platform": "ponsv2",
+    "quote": "RDDT",
+    "quoteName": "Reddit",
+    "quoteAddress": "0x05b37Fb53A299a1b874A619e1c4C404D52C36F4C",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-rivn": {
+    "platform": "ponsv2",
+    "quote": "RIVN",
+    "quoteName": "Rivian Automotive",
+    "quoteAddress": "0xB1BF26c1D20ff267A4f93550d1E0d06ac40a114B",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-sgov": {
+    "platform": "ponsv2",
+    "quote": "SGOV",
+    "quoteName": "iShares 0-3 Month Treasury Bond",
+    "quoteAddress": "0x92fd66527192e3e61d4ddd13322aa222de86f9b5",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-shop": {
+    "platform": "ponsv2",
+    "quote": "SHOP",
+    "quoteName": "Shopify",
+    "quoteAddress": "0xf53f66751b1eff985311b693531e3290f600c410",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-skhy": {
+    "platform": "ponsv2",
+    "quote": "SKHY",
+    "quoteName": "SK hynix",
+    "quoteAddress": "0x84CAb63bc87912E71ad199ff14A0bA45de68FeF8",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-slv": {
+    "platform": "ponsv2",
+    "quote": "SLV",
+    "quoteName": "iShares Silver Trust",
+    "quoteAddress": "0x411efb0e7f985935daec3d4c3ebaea0d0ad7d89f",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-snap": {
+    "platform": "ponsv2",
+    "quote": "SNAP",
+    "quoteName": "Snap",
+    "quoteAddress": "0xF6589F11Bc40b669e584073F428B05562F568733",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-sndk": {
+    "platform": "ponsv2",
+    "quote": "SNDK",
+    "quoteName": "SanDisk",
+    "quoteAddress": "0xB90A19fF0Af67f7779afF50A882A9CfF42446400",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-spcx": {
+    "platform": "ponsv2",
+    "quote": "SPCX",
+    "quoteName": "SpaceX Class A",
+    "quoteAddress": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-spy": {
+    "platform": "ponsv2",
+    "quote": "SPY",
+    "quoteName": "SPDR S&P 500 ETF",
+    "quoteAddress": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-tsla": {
+    "platform": "ponsv2",
+    "quote": "TSLA",
+    "quoteName": "Tesla",
+    "quoteAddress": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-tsm": {
+    "platform": "ponsv2",
+    "quote": "TSM",
+    "quoteName": "Taiwan Semiconductor Manufacturing",
+    "quoteAddress": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-ttwo": {
+    "platform": "ponsv2",
+    "quote": "TTWO",
+    "quoteName": "Take-Two Interactive",
+    "quoteAddress": "0x5e81213613b6B86EaB4c6c50d718d34359459786",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-ups": {
+    "platform": "ponsv2",
+    "quote": "UPS",
+    "quoteName": "UPS",
+    "quoteAddress": "0xf23250dac154d05bb671cb0d0ebef3c635c79ce2",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-uso": {
+    "platform": "ponsv2",
+    "quote": "USO",
+    "quoteName": "United States Oil Fund",
+    "quoteAddress": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
+    "quoteAssetClass": "equity"
+  },
+  "ponsv2-wyfi": {
+    "platform": "ponsv2",
+    "quote": "WYFI",
+    "quoteName": "WhiteFiber",
+    "quoteAddress": "0x9e7ABD3C9139D14E4c86DcE0e455AAB7A0C2FB3E",
+    "quoteAssetClass": "equity"
+  }
+}
