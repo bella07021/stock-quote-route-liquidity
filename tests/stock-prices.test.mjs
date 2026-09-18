@@ -14,10 +14,11 @@ await assert.rejects(collectPrices({test:asset},async()=>[{...pair,priceUsd:null
 await assert.rejects(collectPrices({test:asset},async()=>[pair],0),/USDT/);
 const bnc4={...pair,baseToken:{address:BNC4_POOL.address},pairAddress:BNC4_POOL.pairAddress,
   url:`https://dexscreener.com/bsc/${BNC4_POOL.pairAddress}`,priceNative:'5.7620',priceUsd:'5.76'};
-assert.equal(selectBnc4Price([bnc4]).priceUsdt,5.762,'Use USDT ratio, not rounded USD price');
+assert.equal(selectBnc4Price([bnc4],0.999).priceUsdt,5.762,'Use USDT ratio, not rounded USD price');
+assert.equal(selectBnc4Price([bnc4],0.999).priceUsd,5.762*0.999,'USD and USDT use the same FX in web and Excel');
 for(const bad of [{...bnc4,pairAddress:'0xcf936261a1582b45eae2246105b3388d1e31c94d'},
   {...bnc4,baseToken:bnc4.quoteToken,quoteToken:bnc4.baseToken}, {...bnc4,chainId:'eth'},
-  {...bnc4,priceNative:null}, {...bnc4,priceUsd:'NaN'}])assert.throws(()=>selectBnc4Price([bad]),/specified/);
+  {...bnc4,priceNative:null}, {...bnc4,priceUsd:'NaN'}])assert.throws(()=>selectBnc4Price([bad],1),/specified/);
 const snapshot=await collectPrices({test:asset},async(chain,address)=>address===BNC4_POOL.address?[bnc4]:[pair],0.999);
 assert.equal(snapshot.quotes[BNC4_POOL.key].priceUsdt,5.762);
 await assert.rejects(collectPrices({test:asset},async(chain,address)=>address===BNC4_POOL.address?[]:[pair],1),/BNC4/);

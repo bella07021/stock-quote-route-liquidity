@@ -14,8 +14,9 @@ export const BNC4_POOL = {
   quoteAddress: routes.flap.address,
 };
 
-export function selectBnc4Price(pairs) {
+export function selectBnc4Price(pairs, tetherUsd) {
   if (!Array.isArray(pairs)) throw new Error('BNC4: invalid pool payload');
+  if (!Number.isFinite(tetherUsd) || tetherUsd <= 0) throw new Error('BNC4: invalid USDT/USD price');
   const pair = pairs.find(row => row.chainId === BNC4_POOL.chain &&
     row.pairAddress?.toLowerCase() === BNC4_POOL.pairAddress &&
     row.baseToken?.address?.toLowerCase() === BNC4_POOL.address &&
@@ -26,7 +27,9 @@ export function selectBnc4Price(pairs) {
       pair.url?.toLowerCase() !== `https://dexscreener.com/bsc/${BNC4_POOL.pairAddress}`) {
     throw new Error('BNC4: specified BNC4/USDT pool or price missing; previous snapshot preserved');
   }
-  return {priceUsd:Number(pair.priceUsd), priceUsdt:Number(pair.priceNative),
+  // Convert the direct USDT quote with the same FX input used in Excel.
+  // The API's rounded priceUsd can otherwise make web USD outputs diverge.
+  return {priceUsd:Number(pair.priceNative)*tetherUsd, priceUsdt:Number(pair.priceNative),
     pairAddress:BNC4_POOL.pairAddress, liquidityUsd:Number(pair.liquidity.usd),
     url:pair.url, route:'USDT'};
 }
@@ -71,7 +74,7 @@ export async function collectPrices(universe, fetchPairs, tetherUsd, now = () =>
   }
   if (!Object.keys(quotes).length) throw new Error('Empty stock universe');
   // The user-selected BNC4 pool is fixed; never substitute another pool.
-  const bnc4 = selectBnc4Price(await fetchPairs(BNC4_POOL.chain, BNC4_POOL.address));
+  const bnc4 = selectBnc4Price(await fetchPairs(BNC4_POOL.chain, BNC4_POOL.address), tetherUsd);
   quotes[BNC4_POOL.key] = {symbol:BNC4_POOL.symbol, address:BNC4_POOL.address,
     ...bnc4, fetchedAt:now().toISOString()};
   return { schemaVersion: 1, startedAt, updatedAt: now().toISOString(), tetherUsd,
