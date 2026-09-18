@@ -50,10 +50,20 @@ class PriceRefreshTests(unittest.TestCase):
             self.assertIn('$D$26', cells['D18'].find(module.N('f')).text)
             self.assertIn('SUM(D19,G19)', cells['J18'].find(module.N('f')).text)
             self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
-            formula = cells['D33'].find(module.N('f')).text
+            for row in range(30, 36):
+                for column in 'CDEFGH':
+                    cell = cells.get(f'{column}{row}')
+                    self.assertFalse(module.read_cell(cell, strings), 'Removed metadata is absent from results')
+                    if cell is not None:
+                        self.assertIsNone(cell.find(module.N('f')))
+            for row in range(31, 36):
+                self.assertEqual(rows[row].get('hidden'), '1', 'Empty metadata rows must not leave a gap')
+            for address in ['D51', 'D52', 'D53', 'D54', 'D55', 'D56', 'G54', 'G55']:
+                self.assertIsNotNone(cells[address].find(module.N('f')), 'Needed dependencies remain in collapsed information block')
+            formula = cells['D55'].find(module.N('f')).text
             self.assertIn('$D$9', formula)
             self.assertIn("'Quote参数'!", formula)
-            self.assertIn('$D$33', cells['D19'].find(module.N('f')).text)
+            self.assertIn('$D$55', cells['D19'].find(module.N('f')).text)
             self.assertEqual(module.read_cell(cells['F18'], strings), '原生币 Gas 储备')
             for path in sheets.values():
                 for cell in module.ET.fromstring(parts[path]).iter(module.N('c')):
