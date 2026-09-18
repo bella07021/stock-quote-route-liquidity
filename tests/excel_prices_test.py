@@ -143,6 +143,8 @@ class PriceRefreshTests(unittest.TestCase):
                 self.assertEqual(float(module.read_cell(inputs['N15'], strings)), quote['priceUsdt'])
                 self.assertEqual(module.read_cell(inputs['N18'], strings), '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab')
                 self.assertIn("'控筹模型'!$L$14", inputs['N19'].find(module.N('f')).text)
+                calc = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['控筹测算']]).iter(module.N('c'))}
+                self.assertIn("'参数与来源'!$N$19", calc['D19'].find(module.N('f')).text)
 
     def test_invalid_bnc4_pool_preserves_all_previous_outputs(self):
         with tempfile.TemporaryDirectory() as folder:
