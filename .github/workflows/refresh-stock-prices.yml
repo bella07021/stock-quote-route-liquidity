@@ -19,13 +19,17 @@ jobs:
           node-version: '22'
       - name: Verify price selection and failure preservation
         run: node tests/stock-prices.test.mjs
+      - name: Verify Excel input-only refresh and failure preservation
+        run: python3 tests/excel_prices_test.py
       - name: Refresh daily price snapshot
         run: node scripts/refresh_stock_prices.mjs --universe asset-universe.json --snapshot stock-price-data.json
+      - name: Refresh both downloadable Excel files from the same snapshot
+        run: python3 scripts/refresh_excel_prices.py --templates excel/templates --output excel/latest
       - name: Commit completed snapshot
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add stock-price-data.json
+          git add stock-price-data.json excel/latest
           if ! git diff --cached --quiet; then
             git commit -m "Refresh daily stock Quote prices"
             git push

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-18T05:21:28.188Z",
+  "files": {
+    "flap": {
+      "filename": "Flap_BSC_RWA币股_控筹模型.xlsx",
+      "path": "excel/latest/Flap_BSC_RWA币股_控筹模型.xlsx",
+      "sha256": "fedbb76a74a433354d294964f069af97ddd6389f7fac5df14ff20bc32ee0cfb0",
+      "bytes": 36725
+    },
+    "ponsv2": {
+      "filename": "PonsV2_股票Quote控筹模型.xlsx",
+      "path": "excel/latest/PonsV2_股票Quote控筹模型.xlsx",
+      "sha256": "7327ffe886d9adfe783705e085e860e4c97c1b46e74bcd3c70eaba042adf1876",
+      "bytes": 46043
+    }
+  }
+}
