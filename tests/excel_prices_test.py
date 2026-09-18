@@ -34,8 +34,8 @@ class PriceRefreshTests(unittest.TestCase):
                 quote = self.snapshot['quotes'].get(f'{platform}-{symbol.lower()}')
                 actual = module.read_cell(cells[f'{columns[0]}{row}'], strings)
                 if quote:
-                    self.assertEqual(None if actual is None else float(actual), quote['priceUsdt'])
-                    self.assertEqual(module.read_cell(cells[f'{columns[2]}{row}'], strings), quote.get('url'))
+                    self.assertEqual(None if not actual else float(actual), quote['priceUsdt'])
+                    self.assertEqual(module.read_cell(cells[f'{columns[2]}{row}'], strings) or None, quote.get('url'))
             self.assertEqual(wb.find(module.N('calcPr')).get('fullCalcOnLoad'), '1')
             for path in sheets.values():
                 for cell in module.ET.fromstring(parts[path]).iter(module.N('c')):

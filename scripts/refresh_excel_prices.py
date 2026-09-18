@@ -63,6 +63,10 @@ def replace_value(cell, value):
             cell.remove(child)
     cell.attrib.pop('t', None)
     if value is None:
+        # A literal blank prevents a long source in an adjacent column from
+        # overflowing into an unpriced asset's price cell.
+        cell.set('t', 'inlineStr')
+        ET.SubElement(ET.SubElement(cell, N('is')), N('t')).text = ''
         return
     if isinstance(value, (int, float)):
         if not math.isfinite(value) or value <= 0:
