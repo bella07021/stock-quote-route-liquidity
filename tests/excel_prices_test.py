@@ -28,29 +28,33 @@ class PriceRefreshTests(unittest.TestCase):
             self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
             control = module.ET.fromstring(parts[sheets['控筹模型']])
             cells = {x.get('r'): x for x in control.iter(module.N('c'))}
-            for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C29', '三、模型信息与计算口径（默认折叠，点左侧 + 展开）'), ('C47', '内盘曲线')]:
+            for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C39', '三、模型信息与计算口径（默认折叠，点左侧 + 展开）'), ('C57', '内盘曲线')]:
                 self.assertEqual(module.read_cell(cells[address], strings), title)
             self.assertEqual(module.read_cell(cells['F12'], strings), '资金预留 / Quote')
             self.assertFalse(module.read_cell(cells.get('D10'), strings))
-            self.assertIn('$G$12', cells['D22'].find(module.N('f')).text)
+            self.assertIn('$G$12', cells['D25'].find(module.N('f')).text)
             rows = {int(x.get('r')): x for x in control.find(module.N('sheetData'))}
-            self.assertEqual(rows[29].get('collapsed'), '1')
+            self.assertEqual(rows[39].get('collapsed'), '1')
             self.assertEqual(control.find(module.N('sheetPr')).find(module.N('outlinePr')).get('summaryBelow'), '0')
-            for row in range(30, 47):
+            for row in range(40, 57):
                 self.assertEqual(rows[row].get('hidden'), '1')
                 self.assertEqual(rows[row].get('outlineLevel'), '1')
-            for row in [7, 12, 18, 26, 27, 28, 29, 47, 49]:
+            for row in [7, 12, 18, 26, 27, 28, 29, 39, 57, 59]:
                 self.assertNotEqual(rows[row].get('hidden'), '1', 'Inputs, fee summaries, checks and curves remain visible')
             self.assertEqual(float(rows[7].get('ht')), 20)
-            for address, expression in [('D26', '$G$31'), ('G26', '$G$32'), ('D27', '$G$31+$J$7'), ('G27', '$G$32+$J$7'), ('J26', 'SUM(G27,J27)'), ('G28', '$J$31')]:
+            for address, expression in [('J23', '$G$41'), ('J28', '$G$42'), ('J24', '$G$41+$J$7'), ('J29', '$G$42+$J$7'), ('D27', '$D$8*$J$54')]:
                 self.assertEqual(cells[address].find(module.N('f')).text, expression)
-            self.assertEqual(cells['J27'].find(module.N('f')).text, '$G$32+$J$8' if platform == 'flap' else '$G$32+$J$7')
+            self.assertEqual(cells['J30'].find(module.N('f')).text, '$G$42+$J$8' if platform == 'flap' else '$G$42+$J$7')
+            retention = cells['J54'].find(module.N('f')).text
+            self.assertEqual(retention, '(1-$J$7)*(1-$J$8)*(1-$G$42)^2' if platform == 'flap' else '1')
+            self.assertIn('$D$26', cells['D18'].find(module.N('f')).text)
+            self.assertIn('SUM(D19,G19)', cells['J18'].find(module.N('f')).text)
             self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
-            formula = cells['D24'].find(module.N('f')).text
+            formula = cells['D33'].find(module.N('f')).text
             self.assertIn('$D$9', formula)
             self.assertIn("'Quote参数'!", formula)
-            self.assertIn('$D$24', cells['G18'].find(module.N('f')).text)
-            self.assertEqual(module.read_cell(cells['F18'], strings), '折合 USDT（不含 Gas）')
+            self.assertIn('$D$33', cells['D19'].find(module.N('f')).text)
+            self.assertEqual(module.read_cell(cells['F18'], strings), '原生币 Gas 储备')
             for path in sheets.values():
                 for cell in module.ET.fromstring(parts[path]).iter(module.N('c')):
                     f = cell.find(module.N('f'))
@@ -65,6 +69,9 @@ class PriceRefreshTests(unittest.TestCase):
             parts, wb, sheets, strings = module.workbook_parts(raw)
             sheet = module.ET.fromstring(parts[sheets['Quote参数']])
             cells = {x.get('r'): x for x in sheet.iter(module.N('c'))}
+            if platform == 'flap':
+                self.assertAlmostEqual(float(module.read_cell(cells['P7'], strings)), 600.0 / self.snapshot['tetherUsd'])
+                self.assertEqual(module.read_cell(cells['R7'], strings), self.snapshot['nativeSource'])
             for row in range(first, last + 1):
                 symbol = module.read_cell(cells[f'E{row}'], strings)
                 quote = self.snapshot['quotes'].get(f'{platform}-{symbol.lower()}')
@@ -113,6 +120,14 @@ class PriceRefreshTests(unittest.TestCase):
         del broken['quotes']['flap-spcxb']
         with self.assertRaisesRegex(ValueError, 'missing quote'):
             module.refresh_workbook(raw, 'flap', broken, self.universe)
+
+    def test_invalid_native_price_rejected(self):
+        raw = (self.templates / module.FILES['flap'][0]).read_bytes()
+        for value in [0, -1, float('nan'), float('inf')]:
+            broken = copy.deepcopy(self.snapshot)
+            broken['nativePricesUsd']['BNB'] = value
+            with self.assertRaisesRegex(ValueError, 'invalid native price'):
+                module.refresh_workbook(raw, 'flap', broken, self.universe)
 
 
 if __name__ == '__main__':

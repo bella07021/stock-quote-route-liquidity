@@ -84,6 +84,19 @@ def refresh_workbook(raw, platform, snapshot, universe):
     xml = ET.fromstring(parts[target])
     rows = {int(row.get('r')): row for row in xml.find(N('sheetData'))}
     replaced = set()
+    if platform == 'flap':
+        # Native BNB is not one of the RWA Quote rows. A separate dated input
+        # provides Gas valuation without touching scenario or budget formulas.
+        price = snapshot['nativePricesUsd']['BNB'] / snapshot['tetherUsd']
+        if not math.isfinite(price) or price <= 0:
+            raise ValueError('flap/BNB: invalid native price')
+        native_cells = {cell.get('r'): cell for cell in rows[7]}
+        for column, value in zip(columns, [price, serial_date(snapshot['updatedAt']), snapshot['nativeSource'], '随每日行情更新；仅用于原生币 Gas 折算']):
+            address = f'{column}7'
+            if address not in native_cells:
+                raise ValueError(f'{address}: native Gas price input missing')
+            replace_value(native_cells[address], value)
+            replaced.add(address)
     for row_index in range(first, last + 1):
         row = rows[row_index]
         cells = {cell.get('r'): cell for cell in row}

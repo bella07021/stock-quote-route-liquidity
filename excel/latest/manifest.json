@@ -5,14 +5,14 @@
     "flap": {
       "filename": "Flap_BSC_RWA币股_控筹模型.xlsx",
       "path": "excel/latest/Flap_BSC_RWA币股_控筹模型.xlsx",
-      "sha256": "a016100eeb39dd4a73378a317799b7badd1919a323c2f82f72bd80250d1b1a5d",
-      "bytes": 23905
+      "sha256": "62cbe43d941fb4481474d0fa431995280db9136d55b45f29101a8d4cd842c3e9",
+      "bytes": 25366
     },
     "ponsv2": {
       "filename": "PonsV2_股票Quote控筹模型.xlsx",
       "path": "excel/latest/PonsV2_股票Quote控筹模型.xlsx",
-      "sha256": "c07f092e0f217d90dbe2d7741d597cea87d1f9ef021d58ba6d91f7d1b103af3e",
-      "bytes": 28678
+      "sha256": "f559650e5f396e72db9018c1c737c40b0b109c4caedd75697656680a5b4ee57d",
+      "bytes": 30048
     }
   }
 }
