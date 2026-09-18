@@ -28,8 +28,23 @@ class PriceRefreshTests(unittest.TestCase):
             self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
             control = module.ET.fromstring(parts[sheets['控筹模型']])
             cells = {x.get('r'): x for x in control.iter(module.N('c'))}
-            for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C29', '三、模型信息与计算口径'), ('C47', '内盘曲线')]:
+            for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C29', '三、模型信息与计算口径（默认折叠，点左侧 + 展开）'), ('C47', '内盘曲线')]:
                 self.assertEqual(module.read_cell(cells[address], strings), title)
+            self.assertEqual(module.read_cell(cells['F12'], strings), '资金预留 / Quote')
+            self.assertFalse(module.read_cell(cells.get('D10'), strings))
+            self.assertIn('$G$12', cells['D22'].find(module.N('f')).text)
+            rows = {int(x.get('r')): x for x in control.find(module.N('sheetData'))}
+            self.assertEqual(rows[29].get('collapsed'), '1')
+            self.assertEqual(control.find(module.N('sheetPr')).find(module.N('outlinePr')).get('summaryBelow'), '0')
+            for row in range(30, 47):
+                self.assertEqual(rows[row].get('hidden'), '1')
+                self.assertEqual(rows[row].get('outlineLevel'), '1')
+            for row in [7, 12, 18, 26, 27, 28, 29, 47, 49]:
+                self.assertNotEqual(rows[row].get('hidden'), '1', 'Inputs, fee summaries, checks and curves remain visible')
+            self.assertEqual(float(rows[7].get('ht')), 20)
+            for address, expression in [('D26', '$G$31'), ('G26', '$G$32'), ('D27', '$G$31+$J$7'), ('G27', '$G$32+$J$7'), ('J26', 'SUM(G27,J27)'), ('G28', '$J$31')]:
+                self.assertEqual(cells[address].find(module.N('f')).text, expression)
+            self.assertEqual(cells['J27'].find(module.N('f')).text, '$G$32+$J$8' if platform == 'flap' else '$G$32+$J$7')
             self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
             formula = cells['D24'].find(module.N('f')).text
             self.assertIn('$D$9', formula)
