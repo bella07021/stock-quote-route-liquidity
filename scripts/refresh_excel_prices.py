@@ -91,9 +91,19 @@ def refresh_workbook(raw, platform, snapshot, universe):
                 changes[f'B{row}'] = snapshot['nativePricesUsd'][symbol]
                 changes[f'C{row}'] = snapshot['updatedAt']
         else:
+            quote = snapshot['quotes'].get('fourmeme-bnc4')
+            if not quote or quote.get('address') != '0x7c8d5502b544ddaf8852fc46d1174e34876d545c' or quote.get('pairAddress') != '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab' or quote.get('route') != 'USDT':
+                raise ValueError('BNC4: specified pool or CA mismatch')
+            if quote.get('url') != 'https://dexscreener.com/bsc/0xbec6906a984f4695aca0f15bafa7de5eb45b54ab':
+                raise ValueError('BNC4: specified pool source mismatch')
+            serial_date(quote['fetchedAt'])
+            price = quote.get('priceUsdt')
+            if not isinstance(price, (int, float)) or not math.isfinite(price) or price <= 0:
+                raise ValueError('BNC4: invalid specified pool price')
             changes = {'N8': snapshot['tetherUsd'], 'N9': snapshot['updatedAt'], 'N10': snapshot['tetherSource'],
                        'N12': snapshot['nativePricesUsd']['BNB'] / snapshot['tetherUsd'],
-                       'N13': snapshot['updatedAt'], 'N14': snapshot['nativeSource']}
+                       'N13': snapshot['updatedAt'], 'N14': snapshot['nativeSource'],
+                       'N15': price, 'N16': quote['fetchedAt'], 'N17': quote['url'], 'N18': quote['pairAddress']}
         for address, value in changes.items():
             if address not in cells:
                 raise ValueError(f'{platform}/{address}: dated price input missing')

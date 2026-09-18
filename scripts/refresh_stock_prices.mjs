@@ -7,6 +7,29 @@ const routes = {
   flap: { chain: 'bsc', address: '0x55d398326f99059ff775485246999027b3197955' },
   ponsv2: { chain: 'robinhood', address: '0x0bd7d308f8e1639fab988df18a8011f41eacad73' },
 };
+export const BNC4_POOL = {
+  key: 'fourmeme-bnc4', chain: 'bsc', symbol: 'BNC4',
+  address: '0x7c8d5502b544ddaf8852fc46d1174e34876d545c',
+  pairAddress: '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab',
+  quoteAddress: routes.flap.address,
+};
+
+export function selectBnc4Price(pairs) {
+  if (!Array.isArray(pairs)) throw new Error('BNC4: invalid pool payload');
+  const pair = pairs.find(row => row.chainId === BNC4_POOL.chain &&
+    row.pairAddress?.toLowerCase() === BNC4_POOL.pairAddress &&
+    row.baseToken?.address?.toLowerCase() === BNC4_POOL.address &&
+    row.quoteToken?.address?.toLowerCase() === BNC4_POOL.quoteAddress);
+  if (!pair || !Number.isFinite(Number(pair.priceUsd)) || Number(pair.priceUsd) <= 0 ||
+      !Number.isFinite(Number(pair.priceNative)) || Number(pair.priceNative) <= 0 ||
+      !Number.isFinite(Number(pair.liquidity?.usd)) || Number(pair.liquidity.usd) <= 0 ||
+      pair.url?.toLowerCase() !== `https://dexscreener.com/bsc/${BNC4_POOL.pairAddress}`) {
+    throw new Error('BNC4: specified BNC4/USDT pool or price missing; previous snapshot preserved');
+  }
+  return {priceUsd:Number(pair.priceUsd), priceUsdt:Number(pair.priceNative),
+    pairAddress:BNC4_POOL.pairAddress, liquidityUsd:Number(pair.liquidity.usd),
+    url:pair.url, route:'USDT'};
+}
 
 // Only direct, correctly oriented route pools with material liquidity can price a Quote.
 export function selectPrice(pairs, asset, tetherUsd) {
@@ -47,6 +70,10 @@ export async function collectPrices(universe, fetchPairs, tetherUsd, now = () =>
     quotes[key] = { symbol: asset.quote, address: asset.quoteAddress.toLowerCase(), ...price, fetchedAt: now().toISOString() };
   }
   if (!Object.keys(quotes).length) throw new Error('Empty stock universe');
+  // The user-selected BNC4 pool is fixed; never substitute another pool.
+  const bnc4 = selectBnc4Price(await fetchPairs(BNC4_POOL.chain, BNC4_POOL.address));
+  quotes[BNC4_POOL.key] = {symbol:BNC4_POOL.symbol, address:BNC4_POOL.address,
+    ...bnc4, fetchedAt:now().toISOString()};
   return { schemaVersion: 1, startedAt, updatedAt: now().toISOString(), tetherUsd,
     source: 'DEX Screener deepest direct route pool', tetherSource: 'https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=usd', quotes };
 }
@@ -76,7 +103,9 @@ async function main() {
   const tether = await json(nativeSource);
   const nativePricesUsd = {ETH:Number(tether.ethereum?.usd),BNB:Number(tether.binancecoin?.usd),SOL:Number(tether.solana?.usd),HYPE:Number(tether.hyperliquid?.usd),ASTER:Number(tether['aster-2']?.usd)};
   if(Object.values(nativePricesUsd).some(value=>!Number.isFinite(value)||value<=0))throw new Error('Native quote price missing; previous snapshot preserved');
-  const data = await collectPrices(universe,(chain,address)=>json(`https://api.dexscreener.com/token-pairs/v1/${chain}/${address}`),Number(tether.tether?.usd));
+  const data = await collectPrices(universe,async(chain,address)=> address === BNC4_POOL.address
+    ? (await json(`https://api.dexscreener.com/latest/dex/pairs/bsc/${BNC4_POOL.pairAddress}`)).pairs
+    : json(`https://api.dexscreener.com/token-pairs/v1/${chain}/${address}`),Number(tether.tether?.usd));
   data.nativePricesUsd = nativePricesUsd;
   data.nativeSource = nativeSource;
   await fs.writeFile(`${target}.tmp`,JSON.stringify(data,null,2)+'\n');

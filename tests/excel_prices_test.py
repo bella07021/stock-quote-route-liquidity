@@ -136,9 +136,26 @@ class PriceRefreshTests(unittest.TestCase):
             else:
                 self.assertAlmostEqual(float(module.read_cell(inputs['N12'], strings)), 600 / self.snapshot['tetherUsd'])
                 cells = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['控筹模型']]).iter(module.N('c'))}
-                self.assertIn('ISNUMBER($L$14)', cells['H8'].find(module.N('f')).text)
+                self.assertIn("'参数与来源'!$N$19", cells['H8'].find(module.N('f')).text)
                 self.assertIn('ROUNDUP', cells['H8'].find(module.N('f')).text)
-                self.assertFalse(module.read_cell(cells.get('L14'), strings), 'Never invent a BNC4 price')
+                self.assertFalse(module.read_cell(cells.get('L14'), strings), 'Manual override stays blank')
+                quote = self.snapshot['quotes']['fourmeme-bnc4']
+                self.assertEqual(float(module.read_cell(inputs['N15'], strings)), quote['priceUsdt'])
+                self.assertEqual(module.read_cell(inputs['N18'], strings), '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab')
+                self.assertIn("'控筹模型'!$L$14", inputs['N19'].find(module.N('f')).text)
+
+    def test_invalid_bnc4_pool_preserves_all_previous_outputs(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder)
+            module.publish(self.templates, output, self.snapshot, self.universe)
+            before = {p.name: p.read_bytes() for p in output.iterdir()}
+            for field, value in [('pairAddress', '0xcf936261a1582b45eae2246105b3388d1e31c94d'),
+                                 ('address', '0xwrong'), ('route', 'BNCB'), ('priceUsdt', 0)]:
+                broken = copy.deepcopy(self.snapshot)
+                broken['quotes']['fourmeme-bnc4'][field] = value
+                with self.assertRaisesRegex(ValueError, 'BNC4'):
+                    module.publish(self.templates, output, broken, self.universe)
+                self.assertEqual(before, {p.name: p.read_bytes() for p in output.iterdir()})
 
     def test_second_workbook_error_preserves_all_previous_outputs(self):
         with tempfile.TemporaryDirectory() as folder:
