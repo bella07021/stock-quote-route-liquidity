@@ -122,6 +122,33 @@ class PriceRefreshTests(unittest.TestCase):
             filename = module.FILES[platform][0]
             raw = module.refresh_workbook((self.templates / filename).read_bytes(), platform, self.snapshot, self.universe)
             parts, _, sheets, strings = module.workbook_parts(raw)
+            if 'Quote参数' in sheets:
+                self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
+                inputs = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['Quote参数']]).iter(module.N('c'))}
+                self.assertEqual(float(module.read_cell(inputs['D6'], strings)), self.snapshot['tetherUsd'])
+                cells = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['控筹模型']]).iter(module.N('c'))}
+                for address, value in [('G7', 2), ('G8', 20), ('G9', 30), ('G10', 150)]:
+                    self.assertEqual(float(module.read_cell(cells[address], strings)), value)
+                self.assertIn('ROUNDUP', cells['G12'].find(module.N('f')).text)
+                self.assertIn('SUM(D22:D26)', cells['D18'].find(module.N('f')).text)
+                self.assertFalse(module.read_cell(cells.get('D9'), strings))
+                control = module.ET.fromstring(parts[sheets['控筹模型']])
+                rows = {int(x.get('r')): x for x in control.find(module.N('sheetData'))}
+                self.assertEqual(rows[39].get('collapsed'), '1')
+                for row in range(40, 57):
+                    self.assertEqual(rows[row].get('hidden'), '1')
+                for row in range(31, 36):
+                    self.assertEqual(rows[row].get('hidden'), '1')
+                for row in range(14, 15 if platform == 'four-stock' else 23):
+                    symbol = module.read_cell(inputs[f'E{row}'], strings)
+                    native = module.read_cell(inputs[f'F{row}'], strings)
+                    self.assertAlmostEqual(float(module.read_cell(inputs[f'I{row}'], strings)), self.snapshot['nativePricesUsd'][native]/self.snapshot['tetherUsd'])
+                    price = self.snapshot['quotes']['fourmeme-bnc4']['priceUsdt'] if platform == 'four-stock' else (1 if symbol == 'USD1' else self.snapshot['nativePricesUsd'][symbol])/self.snapshot['tetherUsd']
+                    self.assertAlmostEqual(float(module.read_cell(inputs[f'H{row}'], strings)), price)
+                if platform == 'four-stock':
+                    self.assertEqual(module.read_cell(inputs['AG14'], strings), '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab')
+                    self.assertEqual(module.read_cell(inputs['G14'], strings), '0x7c8d5502b544ddaf8852fc46d1174e34876d545c')
+                continue
             target = '币价' if platform == 'base' else '参数与来源'
             inputs = {x.get('r'): x for x in module.ET.fromstring(parts[sheets[target]]).iter(module.N('c'))}
             self.assertEqual(float(module.read_cell(inputs['B12' if platform == 'base' else 'N8'], strings)), self.snapshot['tetherUsd'])

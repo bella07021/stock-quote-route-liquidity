@@ -81,6 +81,42 @@ def replace_value(cell, value):
 
 def refresh_workbook(raw, platform, snapshot, universe):
     parts, wb, sheets, strings = workbook_parts(raw)
+    if platform in ['base', 'four-stock'] and 'Quote参数' in sheets:
+        target = sheets['Quote参数']
+        xml = ET.fromstring(parts[target])
+        cells = {x.get('r'): x for x in xml.iter(N('c'))}
+        changes = {'D6': snapshot['tetherUsd'], 'D7': serial_date(snapshot['updatedAt']), 'D8': snapshot['tetherSource']}
+        expected = ['fourmeme-bnc4'] if platform == 'four-stock' else [
+            'pumpfun-sol', 'letsbonk-usd1', 'fourmeme-usd1', 'fourmeme-bnb', 'fourmeme-aster',
+            'hyperpie-hype', 'flap-bnb', 'flap-usd1', 'ponsv2-eth']
+        for row, key in enumerate(expected, 14):
+            if read_cell(cells.get(f'D{row}'), strings) != key:
+                raise ValueError(f'{platform}: model row mismatch')
+            quote_symbol = read_cell(cells[f'E{row}'], strings)
+            native_symbol = read_cell(cells[f'F{row}'], strings)
+            native_price = snapshot['nativePricesUsd'][native_symbol] / snapshot['tetherUsd']
+            if platform == 'four-stock':
+                quote = snapshot['quotes'].get(key)
+                if not quote or quote.get('address') != '0x7c8d5502b544ddaf8852fc46d1174e34876d545c' or quote.get('pairAddress') != '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab' or quote.get('route') != 'USDT':
+                    raise ValueError('BNC4: specified pool or CA mismatch')
+                if read_cell(cells[f'G{row}'], strings) != quote['address'] or quote.get('url') != 'https://dexscreener.com/bsc/0xbec6906a984f4695aca0f15bafa7de5eb45b54ab':
+                    raise ValueError('BNC4: template CA or source mismatch')
+                serial_date(quote['fetchedAt'])
+                price = quote.get('priceUsdt')
+                if not isinstance(price, (int, float)) or not math.isfinite(price) or price <= 0:
+                    raise ValueError('BNC4: invalid specified pool price')
+                stamp, url, pair = quote['fetchedAt'], quote['url'], quote['pairAddress']
+            else:
+                price = (1 if quote_symbol == 'USD1' else snapshot['nativePricesUsd'][quote_symbol]) / snapshot['tetherUsd']
+                stamp, url, pair = snapshot['updatedAt'], snapshot['nativeSource'], ''
+            changes.update({f'H{row}': price, f'I{row}': native_price, f'J{row}': serial_date(stamp),
+                            f'K{row}': url, f'AF{row}': snapshot['nativeSource'], f'AG{row}': pair})
+        for address, value in changes.items():
+            if address not in cells:
+                raise ValueError(f'{platform}/{address}: dated price input missing')
+            replace_value(cells[address], value)
+        parts[target] = ET.tostring(xml, encoding='utf-8', xml_declaration=True)
+        return finalize_workbook(raw, parts, wb, sheets, target, set(changes))
     if platform in ['base', 'four-stock']:
         target = sheets['币价' if platform == 'base' else '参数与来源']
         xml = ET.fromstring(parts[target])
