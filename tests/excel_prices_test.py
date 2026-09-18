@@ -22,6 +22,27 @@ class PriceRefreshTests(unittest.TestCase):
         cls.snapshot['nativePricesUsd'] = {'ETH': 2000.0, 'BNB': 600.0}
         cls.snapshot['nativeSource'] = 'https://api.coingecko.com/api/v3/simple/price'
 
+    def test_two_tab_layout_and_single_quote_price_override(self):
+        for platform, (filename, _, _, _) in module.FILES.items():
+            parts, _, sheets, strings = module.workbook_parts((self.templates / filename).read_bytes())
+            self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
+            control = module.ET.fromstring(parts[sheets['控筹模型']])
+            cells = {x.get('r'): x for x in control.iter(module.N('c'))}
+            for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C29', '三、模型信息与计算口径'), ('C47', '内盘曲线')]:
+                self.assertEqual(module.read_cell(cells[address], strings), title)
+            self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
+            formula = cells['D24'].find(module.N('f')).text
+            self.assertIn('$D$9', formula)
+            self.assertIn("'Quote参数'!", formula)
+            self.assertIn('$D$24', cells['G18'].find(module.N('f')).text)
+            self.assertEqual(module.read_cell(cells['F18'], strings), '折合 USDT（不含 Gas）')
+            for path in sheets.values():
+                for cell in module.ET.fromstring(parts[path]).iter(module.N('c')):
+                    f = cell.find(module.N('f'))
+                    if f is not None:
+                        for old_sheet in ['单币测算', '选中Quote曲线', '全Quote预算', '全RWA预算']:
+                            self.assertNotIn(old_sheet, f.text)
+
     def test_both_workbooks_price_and_provenance_only(self):
         for platform, (filename, first, last, columns) in module.FILES.items():
             original = (self.templates / filename).read_bytes()
