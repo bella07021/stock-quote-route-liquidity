@@ -19,11 +19,13 @@ class PriceRefreshTests(unittest.TestCase):
         cls.universe = json.loads((ROOT / 'asset-universe.json').read_text())
         cls.snapshot = json.loads((ROOT / 'stock-price-data.json').read_text())
         # Stable test inputs; no network involved.
-        cls.snapshot['nativePricesUsd'] = {'ETH': 2000.0, 'BNB': 600.0}
+        cls.snapshot['nativePricesUsd'] = {'ETH': 2000.0, 'BNB': 600.0, 'SOL': 100.0, 'HYPE': 50.0, 'ASTER': 1.0}
         cls.snapshot['nativeSource'] = 'https://api.coingecko.com/api/v3/simple/price'
 
     def test_two_tab_layout_and_single_quote_price_override(self):
         for platform, (filename, _, _, _) in module.FILES.items():
+            if platform not in ['flap', 'ponsv2']:
+                continue
             parts, _, sheets, strings = module.workbook_parts((self.templates / filename).read_bytes())
             self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
             control = module.ET.fromstring(parts[sheets['控筹模型']])
@@ -31,6 +33,12 @@ class PriceRefreshTests(unittest.TestCase):
             for address, title in [('C5', '一、可编辑参数'), ('C17', '二、测算结果'), ('C39', '三、模型信息与计算口径（默认折叠，点左侧 + 展开）'), ('C57', '内盘曲线')]:
                 self.assertEqual(module.read_cell(cells[address], strings), title)
             self.assertEqual(module.read_cell(cells['F12'], strings), '资金预留 / Quote')
+            for address, value in [('G7', 2), ('G8', 20), ('G9', 30), ('G10', 150)]:
+                self.assertEqual(float(module.read_cell(cells[address], strings)), value)
+            reserve_formula = cells['G12'].find(module.N('f')).text
+            self.assertIn('ROUNDUP($G$56/$D$55,0)', reserve_formula)
+            self.assertIn('ISNUMBER($D$55)', reserve_formula)
+            self.assertEqual(float(module.read_cell(cells['G56'], strings)), 10000)
             self.assertFalse(module.read_cell(cells.get('D10'), strings))
             self.assertIn('$G$12', cells['D25'].find(module.N('f')).text)
             rows = {int(x.get('r')): x for x in control.find(module.N('sheetData'))}
@@ -74,6 +82,8 @@ class PriceRefreshTests(unittest.TestCase):
 
     def test_both_workbooks_price_and_provenance_only(self):
         for platform, (filename, first, last, columns) in module.FILES.items():
+            if platform not in ['flap', 'ponsv2']:
+                continue
             original = (self.templates / filename).read_bytes()
             raw = module.refresh_workbook(original, platform, self.snapshot, self.universe)
             parts, wb, sheets, strings = module.workbook_parts(raw)
@@ -100,11 +110,35 @@ class PriceRefreshTests(unittest.TestCase):
             output = Path(folder)
             module.publish(self.templates, output, self.snapshot, self.universe)
             manifest = json.loads((output / 'manifest.json').read_text())
+            self.assertEqual(set(manifest['files']), {'flap', 'ponsv2', 'base', 'four-stock'})
             self.assertEqual(manifest['updatedAt'], self.snapshot['updatedAt'])
             for entry in manifest['files'].values():
                 raw = (output / entry['filename']).read_bytes()
                 self.assertEqual(len(raw), entry['bytes'])
                 self.assertEqual(hashlib.sha256(raw).hexdigest(), entry['sha256'])
+
+    def test_base_and_four_stock_share_daily_prices_and_reserve_rule(self):
+        for platform in ['base', 'four-stock']:
+            filename = module.FILES[platform][0]
+            raw = module.refresh_workbook((self.templates / filename).read_bytes(), platform, self.snapshot, self.universe)
+            parts, _, sheets, strings = module.workbook_parts(raw)
+            target = '币价' if platform == 'base' else '参数与来源'
+            inputs = {x.get('r'): x for x in module.ET.fromstring(parts[sheets[target]]).iter(module.N('c'))}
+            self.assertEqual(float(module.read_cell(inputs['B12' if platform == 'base' else 'N8'], strings)), self.snapshot['tetherUsd'])
+            if platform == 'base':
+                for symbol, row in [('SOL', 3), ('BNB', 4), ('HYPE', 5), ('ASTER', 6), ('ETH', 7)]:
+                    self.assertEqual(float(module.read_cell(inputs[f'B{row}'], strings)), self.snapshot['nativePricesUsd'][symbol])
+                for name in ['Pump_SOL', 'Bonk_USD1', 'Four_USD1', 'Four_BNB', 'Four_ASTER', 'Hyper_HYPE', 'Flap_BNB', 'Flap_USD1', 'PonsV2_ETH']:
+                    cells = {x.get('r'): x for x in module.ET.fromstring(parts[sheets[name]]).iter(module.N('c'))}
+                    for address, value in [('H7', 20), ('H8', 2), ('J3', 30), ('J4', 150)]:
+                        self.assertEqual(float(module.read_cell(cells[address], strings)), value)
+                    self.assertIn('ROUNDUP', cells['H5'].find(module.N('f')).text)
+            else:
+                self.assertAlmostEqual(float(module.read_cell(inputs['N12'], strings)), 600 / self.snapshot['tetherUsd'])
+                cells = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['控筹模型']]).iter(module.N('c'))}
+                self.assertIn('ISNUMBER($L$14)', cells['H8'].find(module.N('f')).text)
+                self.assertIn('ROUNDUP', cells['H8'].find(module.N('f')).text)
+                self.assertFalse(module.read_cell(cells.get('L14'), strings), 'Never invent a BNC4 price')
 
     def test_second_workbook_error_preserves_all_previous_outputs(self):
         with tempfile.TemporaryDirectory() as folder:

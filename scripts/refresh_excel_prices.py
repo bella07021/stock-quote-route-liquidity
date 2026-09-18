@@ -24,6 +24,8 @@ N = lambda tag: f'{{{NS}}}{tag}'
 FILES = {
     'flap': ('Flap_BSC_RWA币股_控筹模型.xlsx', 14, 36, ['P', 'Q', 'R', 'S']),
     'ponsv2': ('PonsV2_股票Quote控筹模型.xlsx', 9, 62, ['S', 'T', 'U', 'V']),
+    'base': ('发射平台模型_全曲线_PonsV2.xlsx', 0, 0, []),
+    'four-stock': ('FourMeme_4Stock_BNC4_控筹模型.xlsx', 0, 0, []),
 }
 
 
@@ -79,6 +81,25 @@ def replace_value(cell, value):
 
 def refresh_workbook(raw, platform, snapshot, universe):
     parts, wb, sheets, strings = workbook_parts(raw)
+    if platform in ['base', 'four-stock']:
+        target = sheets['币价' if platform == 'base' else '参数与来源']
+        xml = ET.fromstring(parts[target])
+        cells = {x.get('r'): x for x in xml.iter(N('c'))}
+        if platform == 'base':
+            changes = {'B12': snapshot['tetherUsd'], 'D12': snapshot['updatedAt'], 'B13': snapshot['tetherSource']}
+            for symbol, row in [('SOL', 3), ('BNB', 4), ('HYPE', 5), ('ASTER', 6), ('ETH', 7)]:
+                changes[f'B{row}'] = snapshot['nativePricesUsd'][symbol]
+                changes[f'C{row}'] = snapshot['updatedAt']
+        else:
+            changes = {'N8': snapshot['tetherUsd'], 'N9': snapshot['updatedAt'], 'N10': snapshot['tetherSource'],
+                       'N12': snapshot['nativePricesUsd']['BNB'] / snapshot['tetherUsd'],
+                       'N13': snapshot['updatedAt'], 'N14': snapshot['nativeSource']}
+        for address, value in changes.items():
+            if address not in cells:
+                raise ValueError(f'{platform}/{address}: dated price input missing')
+            replace_value(cells[address], value)
+        parts[target] = ET.tostring(xml, encoding='utf-8', xml_declaration=True)
+        return finalize_workbook(raw, parts, wb, sheets, target, set(changes))
     _, first, last, columns = FILES[platform]
     target = sheets['Quote参数']
     xml = ET.fromstring(parts[target])
@@ -130,6 +151,10 @@ def refresh_workbook(raw, platform, snapshot, universe):
             replace_value(cell, value)
             replaced.add(address)
     parts[target] = ET.tostring(xml, encoding='utf-8', xml_declaration=True)
+    return finalize_workbook(raw, parts, wb, sheets, target, replaced)
+
+
+def finalize_workbook(raw, parts, wb, sheets, target, replaced):
     for path in sheets.values():
         sheet = ET.fromstring(parts[path])
         for cell in sheet.iter(N('c')):
@@ -193,7 +218,7 @@ def publish(templates, output, snapshot, universe):
     serial_date(snapshot['updatedAt'])
     outputs = {}
     manifest = {'schemaVersion': 1, 'updatedAt': snapshot['updatedAt'], 'files': {}}
-    # Build and validate both first; an error must not replace either previous file.
+    # Build and validate all four before replacing any previous file.
     for platform, (filename, _, _, _) in FILES.items():
         raw = refresh_workbook((templates / filename).read_bytes(), platform, snapshot, universe)
         outputs[filename] = raw

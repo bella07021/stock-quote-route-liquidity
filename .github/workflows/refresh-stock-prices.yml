@@ -23,7 +23,7 @@ jobs:
         run: python3 tests/excel_prices_test.py
       - name: Refresh daily price snapshot
         run: node scripts/refresh_stock_prices.mjs --universe asset-universe.json --snapshot stock-price-data.json
-      - name: Refresh both downloadable Excel files from the same snapshot
+      - name: Refresh all four downloadable Excel files from the same snapshot
         run: python3 scripts/refresh_excel_prices.py --templates excel/templates --output excel/latest
       - name: Commit completed snapshot
         run: |

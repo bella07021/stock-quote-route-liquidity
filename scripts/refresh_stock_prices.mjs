@@ -72,9 +72,9 @@ async function main() {
     }
     throw new Error(`${url}: ${lastError.message}; previous snapshot preserved`);
   }
-  const nativeSource = 'https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin&vs_currencies=usd';
+  const nativeSource = 'https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2&vs_currencies=usd';
   const tether = await json(nativeSource);
-  const nativePricesUsd = {ETH:Number(tether.ethereum?.usd),BNB:Number(tether.binancecoin?.usd)};
+  const nativePricesUsd = {ETH:Number(tether.ethereum?.usd),BNB:Number(tether.binancecoin?.usd),SOL:Number(tether.solana?.usd),HYPE:Number(tether.hyperliquid?.usd),ASTER:Number(tether['aster-2']?.usd)};
   if(Object.values(nativePricesUsd).some(value=>!Number.isFinite(value)||value<=0))throw new Error('Native quote price missing; previous snapshot preserved');
   const data = await collectPrices(universe,(chain,address)=>json(`https://api.dexscreener.com/token-pairs/v1/${chain}/${address}`),Number(tether.tether?.usd));
   data.nativePricesUsd = nativePricesUsd;
