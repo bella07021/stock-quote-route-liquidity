@@ -54,7 +54,7 @@ class PriceRefreshTests(unittest.TestCase):
                 self.assertEqual(cells[address].find(module.N('f')).text, expression)
             self.assertEqual(cells['J30'].find(module.N('f')).text, '$G$42+$J$8' if platform == 'flap' else '$G$42+$J$7')
             retention = cells['J54'].find(module.N('f')).text
-            self.assertEqual(retention, '(1-$J$7)*(1-$J$8)*(1-$G$42)^2' if platform == 'flap' else '1')
+            self.assertEqual(retention, '(1-$J$7)*(1-$J$8)*(1-$G$42)' if platform == 'flap' else '1')
             self.assertIn('$D$26', cells['D18'].find(module.N('f')).text)
             self.assertIn('SUM(D19,G19)', cells['J18'].find(module.N('f')).text)
             self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
@@ -139,11 +139,11 @@ class PriceRefreshTests(unittest.TestCase):
                     self.assertEqual(rows[row].get('hidden'), '1')
                 for row in range(31, 36):
                     self.assertEqual(rows[row].get('hidden'), '1')
-                for row in range(14, 15 if platform == 'four-stock' else 23):
+                for row in range(14, 15 if platform == 'four-stock' else 24):
                     symbol = module.read_cell(inputs[f'E{row}'], strings)
                     native = module.read_cell(inputs[f'F{row}'], strings)
                     self.assertAlmostEqual(float(module.read_cell(inputs[f'I{row}'], strings)), self.snapshot['nativePricesUsd'][native]/self.snapshot['tetherUsd'])
-                    price = self.snapshot['quotes']['fourmeme-bnc4']['priceUsdt'] if platform == 'four-stock' else (1 if symbol == 'USD1' else self.snapshot['nativePricesUsd'][symbol])/self.snapshot['tetherUsd']
+                    price = self.snapshot['quotes']['fourmeme-bnc4']['priceUsdt'] if platform == 'four-stock' else (1 if symbol in ['USD1', 'USDG'] else self.snapshot['nativePricesUsd'][symbol])/self.snapshot['tetherUsd']
                     self.assertAlmostEqual(float(module.read_cell(inputs[f'H{row}'], strings)), price)
                 if platform == 'four-stock':
                     self.assertEqual(module.read_cell(inputs['AG14'], strings), '0xbec6906a984f4695aca0f15bafa7de5eb45b54ab')

@@ -530,5 +530,12 @@
     "quoteName": "WhiteFiber",
     "quoteAddress": "0x9e7ABD3C9139D14E4c86DcE0e455AAB7A0C2FB3E",
     "quoteAssetClass": "equity"
+  },
+  "ponsv2-usdg": {
+    "platform": "ponsv2",
+    "quote": "USDG",
+    "quoteName": "Global Dollar",
+    "quoteAddress": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+    "quoteAssetClass": "stablecoin"
   }
 }

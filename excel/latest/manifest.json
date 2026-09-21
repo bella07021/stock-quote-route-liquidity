@@ -11,14 +11,14 @@
     "ponsv2": {
       "filename": "PonsV2_股票Quote控筹模型.xlsx",
       "path": "excel/latest/PonsV2_股票Quote控筹模型.xlsx",
-      "sha256": "74d864b9055127101f7006657f23bd4efa86c66643ecc45b1fd131f195a98e7d",
-      "bytes": 30221
+      "sha256": "7482f3a10c7a4604bef6c77f190035b2905b88361c00ae47b04a257689df36b1",
+      "bytes": 30557
     },
     "base": {
       "filename": "发射平台模型_全曲线_PonsV2.xlsx",
       "path": "excel/latest/发射平台模型_全曲线_PonsV2.xlsx",
-      "sha256": "b44519f8d02dcd6872626cb30ca4788ef69c070d4912f51ad28fedeade5e5f18",
-      "bytes": 25284
+      "sha256": "2cb559fc6e7a78f6bc9c3ac2c6caa97c2d46c239dc77a0e73a8aae626bdede4d",
+      "bytes": 25638
     },
     "four-stock": {
       "filename": "FourMeme_4Stock_BNC4_控筹模型.xlsx",

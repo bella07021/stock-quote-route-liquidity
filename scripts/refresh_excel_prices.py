@@ -23,7 +23,7 @@ ET.register_namespace('r', REL)
 N = lambda tag: f'{{{NS}}}{tag}'
 FILES = {
     'flap': ('Flap_BSC_RWA币股_控筹模型.xlsx', 14, 36, ['P', 'Q', 'R', 'S']),
-    'ponsv2': ('PonsV2_股票Quote控筹模型.xlsx', 9, 62, ['S', 'T', 'U', 'V']),
+    'ponsv2': ('PonsV2_股票Quote控筹模型.xlsx', 9, 63, ['S', 'T', 'U', 'V']),
     'base': ('发射平台模型_全曲线_PonsV2.xlsx', 0, 0, []),
     'four-stock': ('FourMeme_4Stock_BNC4_控筹模型.xlsx', 0, 0, []),
 }
@@ -88,7 +88,7 @@ def refresh_workbook(raw, platform, snapshot, universe):
         changes = {'D6': snapshot['tetherUsd'], 'D7': serial_date(snapshot['updatedAt']), 'D8': snapshot['tetherSource']}
         expected = ['fourmeme-bnc4'] if platform == 'four-stock' else [
             'pumpfun-sol', 'letsbonk-usd1', 'fourmeme-usd1', 'fourmeme-bnb', 'fourmeme-aster',
-            'hyperpie-hype', 'flap-bnb', 'flap-usd1', 'ponsv2-eth']
+            'hyperpie-hype', 'flap-bnb', 'flap-usd1', 'ponsv2-eth', 'ponsv2-usdg']
         for row, key in enumerate(expected, 14):
             if read_cell(cells.get(f'D{row}'), strings) != key:
                 raise ValueError(f'{platform}: model row mismatch')
@@ -107,7 +107,7 @@ def refresh_workbook(raw, platform, snapshot, universe):
                     raise ValueError('BNC4: invalid specified pool price')
                 stamp, url, pair = quote['fetchedAt'], quote['url'], quote['pairAddress']
             else:
-                price = (1 if quote_symbol == 'USD1' else snapshot['nativePricesUsd'][quote_symbol]) / snapshot['tetherUsd']
+                price = (1 if quote_symbol in ['USD1', 'USDG'] else snapshot['nativePricesUsd'][quote_symbol]) / snapshot['tetherUsd']
                 stamp, url, pair = snapshot['updatedAt'], snapshot['nativeSource'], ''
             changes.update({f'H{row}': price, f'I{row}': native_price, f'J{row}': serial_date(stamp),
                             f'K{row}': url, f'AF{row}': snapshot['nativeSource'], f'AG{row}': pair})
@@ -185,8 +185,8 @@ def refresh_workbook(raw, platform, snapshot, universe):
             # Dedicated workbooks include these native Quotes; use the same dated FX snapshot.
             price = snapshot['nativePricesUsd'][symbol] / snapshot['tetherUsd']
             values = [price, serial_date(snapshot['updatedAt']), snapshot['nativeSource'], '每日原生币价格；本地可手动更新']
-        elif symbol == 'USD1':
-            values = [1 / snapshot['tetherUsd'], serial_date(snapshot['updatedAt']), snapshot['tetherSource'], 'USD1 按 1 USD 换算；本地可手动更新']
+        elif symbol in ['USD1', 'USDG']:
+            values = [1 / snapshot['tetherUsd'], serial_date(snapshot['updatedAt']), snapshot['tetherSource'], f'{symbol} 按 1 USD 估算；本地可手动更新']
         else:
             raise ValueError(f'{platform}/{symbol}: unmapped workbook Quote')
         for column, value in zip(columns, values):
