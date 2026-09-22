@@ -59,7 +59,8 @@ export async function collectSnapshot(previous, scenarios, fetchPairs, now = () 
     data.platforms[platform] = { ...previous.platforms[platform], rows, updatedAt: now().toISOString(), sourceLabel: data.sourceLabel };
   }
   data.updatedAt = now().toISOString();
-  data.snapshotDate = data.updatedAt.slice(0, 10);
+  // China Standard Time is UTC+8 year-round; the scheduled run occurs on the prior UTC date.
+  data.snapshotDate = new Date(Date.parse(data.updatedAt) + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
   return data;
 }
 

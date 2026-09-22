@@ -20,7 +20,7 @@ Stock Quote prices refresh daily at 01:30 UTC (09:30 Asia/Shanghai), independent
 
 Public market liquidity snapshots for Robinhood Chain WETH routes and BSC USDT routes.
 
-GitHub Actions refreshes the snapshot daily at 01:15 UTC (09:15 Asia/Shanghai). Scheduled runs may be delayed by GitHub. Manual refresh is available through workflow_dispatch.
+GitHub Actions refreshes the snapshot daily at 22:15 UTC (06:15 the following day in Asia/Shanghai). The snapshot date uses Asia/Shanghai's calendar date. Scheduled runs may be delayed by GitHub. Manual refresh is available through workflow_dispatch.
 
 The asset universe contains publicly available token addresses. Every run rechecks all listed assets, including assets below the admission threshold. Only exact route token contracts are matched. Pools with TVL below USD 100,000 are excluded, and pool IDs are deduplicated. An asset is admitted when aggregate TVL is at least USD 900,000. XAUT is a gold RWA asset.
 

@@ -31,6 +31,8 @@ await assert.rejects(collectSnapshot(previous, scenarios, async chain => {
 assert.equal(JSON.stringify(previous), original, 'failed refresh cannot mutate the old snapshot');
 const snapshot = await collectSnapshot(previous, scenarios, async () => [], () => new Date('2026-09-17T01:00:00Z'));
 assert.equal(snapshot.snapshotDate, '2026-09-17');
+const morningSnapshot = await collectSnapshot(previous, scenarios, async () => [], () => new Date('2026-09-22T22:15:00Z'));
+assert.equal(morningSnapshot.snapshotDate, '2026-09-23', '06:15 Beijing run uses the local calendar date');
 assert.equal(snapshot.platforms.flap.rows.length, 1);
 assert.equal(JSON.stringify(previous), original);
 console.log('Stock refresh aggregation and failure-preservation checks passed.');
