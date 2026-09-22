@@ -55,7 +55,9 @@ class PriceRefreshTests(unittest.TestCase):
             self.assertEqual(cells['J30'].find(module.N('f')).text, '$G$42+$J$8' if platform == 'flap' else '$G$42+$J$7')
             retention = cells['J54'].find(module.N('f')).text
             self.assertEqual(retention, 'MAX(0,1-$J$29)*MAX(0,1-$J$30)')
-            self.assertEqual(cells['D26'].find(module.N('f')).text, 'IF($D$51<>"可达","",0)')
+            recovery = cells['D26'].find(module.N('f')).text
+            self.assertIn('$G$50/$J$55-$G$50/$J$56', recovery)
+            self.assertIn('$J$55>0', recovery)
             self.assertIn('$D$26', cells['D18'].find(module.N('f')).text)
             self.assertIn('SUM(D19,G19)', cells['J18'].find(module.N('f')).text)
             self.assertIsNone(cells['D9'].find(module.N('f')), 'Manual override must be independent of the automatic lookup')
