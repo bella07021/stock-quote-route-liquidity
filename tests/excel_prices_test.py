@@ -133,7 +133,8 @@ class PriceRefreshTests(unittest.TestCase):
                 for address, value in [('G7', 2), ('G8', 20), ('G9', 30), ('G10', 150)]:
                     self.assertEqual(float(module.read_cell(cells[address], strings)), value)
                 self.assertIn('ROUNDUP', cells['G12'].find(module.N('f')).text)
-                self.assertIn('SUM(D22:D26)', cells['D18'].find(module.N('f')).text)
+                self.assertIn('SUM($D$22:$D$23,$D$25:$D$26)', cells['D18'].find(module.N('f')).text)
+                self.assertFalse(module.read_cell(cells.get('D24'), strings))
                 self.assertFalse(module.read_cell(cells.get('D9'), strings))
                 control = module.ET.fromstring(parts[sheets['控筹模型']])
                 rows = {int(x.get('r')): x for x in control.find(module.N('sheetData'))}
