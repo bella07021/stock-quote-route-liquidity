@@ -16,7 +16,24 @@ Results refinement: reachability, buffered control, address count, control ceili
 
 The daily price workflow also publishes the Flap and Pons XLSX downloads under `excel/latest`. Both workbooks use the exact same price snapshot and are committed together with the JSON only after validation succeeds. Cloud runners do not have the local artifact-tool runtime: the dependency-free updater mechanically replaces only the four dated price/provenance columns in locally authored templates, verifies all unrelated inputs, formulas, styles, objects and workbook parts remain unchanged, clears stale formula caches and enables full automatic recalculation on opening in Excel. Missing pool coverage remains blank. On failure, the previously committed pair stays available. `manifest.json` records the price timestamp, byte lengths and SHA-256; the website checks the manifest before downloading and shows the price date. Files already saved on a user's computer are not changed.
 
-Stock Quote prices refresh daily at 01:30 UTC (09:30 Asia/Shanghai), independently of daily liquidity admission. DEX Screener prices come from the deepest directly matched stock/WETH (Robinhood) or stock/USDT (BSC) pool with at least USD 100,000 liquidity. These are token prices, not original listed-share quotes. BSC uses the direct USDT quote; Robinhood USD prices convert using CoinGecko USDT/USD. Missing coverage stays null; failed requests or missing prices in qualifying pools preserve the previous complete snapshot. GitHub may delay scheduled runs.
+Stock Quote prices refresh daily at 01:30 UTC (09:30 Asia/Shanghai), independently of daily liquidity admission. DEX Screener prices come from the deepest directly matched stock/WETH (Robinhood) or stock/USDT (BSC) pool with at least USD 100,000 liquidity. These are token prices, not original listed-share quotes. BSC uses the direct USDT quote; Robinhood USD prices convert using the validated USDT/USD source below. Missing coverage stays null; failed requests or missing prices in qualifying pools preserve the previous complete snapshot. GitHub may delay scheduled runs.
+
+### Native price availability and failure handling
+
+CoinGecko remains the preferred USD source for USDT, ETH, BNB, SOL, HYPE and ASTER. If it is unavailable (including HTTP 403) or its response fails validation, the updater tries the public DefiLlama price API with the same exact CoinGecko asset IDs. This is an alternative API endpoint, not a guarantee of independent upstream market data or permanent availability. No API key or paid service is required.
+
+The updater accepts only a complete batch from one provider: every USD price must be a finite positive number, every provider timestamp must be at most 15 minutes old and no more than 60 seconds in the future, and DefiLlama confidence must be at least 0.99. It rechecks timestamps after collecting DEX prices, before replacing the snapshot. It never mixes providers within a batch, assumes USDT is 1 USD, or republishes cached snapshots with new timestamps. The JSON records the selected `nativePriceProvider`, each asset's Unix-second `nativePriceTimestamps`, and the actual `nativeSource`/`tetherSource`; the same source URLs flow into Excel. `updatedAt` remains the snapshot collection time, distinct from the source timestamps.
+
+HTTP 403 and other permanent request errors are not retried. Network errors, HTTP 408/429 and server errors receive up to three attempts, with bounded backoff and `Retry-After` handling. If both sources fail, or any required DEX/fixed BNC4 pool fails, the job still fails closed: the previous JSON remains unchanged and the Excel-generation/commit steps do not run. A warning identifies the failed provider when fallback succeeds.
+
+Offline regression checks (also run on pull requests):
+
+```sh
+node --test tests/*.test.mjs
+python3 tests/excel_prices_test.py
+```
+
+Provider references: [CoinGecko freshness parameter](https://docs.coingecko.com/reference/simple-price), [DefiLlama price API and types](https://github.com/DefiLlama/api-sdk/blob/master/src/types/prices.ts).
 
 Public market liquidity snapshots for Robinhood Chain WETH routes and BSC USDT routes.
 

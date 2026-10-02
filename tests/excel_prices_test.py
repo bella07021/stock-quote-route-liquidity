@@ -120,6 +120,28 @@ class PriceRefreshTests(unittest.TestCase):
                 self.assertEqual(len(raw), entry['bytes'])
                 self.assertEqual(hashlib.sha256(raw).hexdigest(), entry['sha256'])
 
+    def test_fallback_source_propagates_to_all_four_workbooks(self):
+        snapshot = copy.deepcopy(self.snapshot)
+        source = 'https://coins.llama.fi/prices/current/coingecko:tether,coingecko:ethereum,coingecko:binancecoin,coingecko:solana,coingecko:hyperliquid,coingecko:aster-2'
+        snapshot['nativeSource'] = snapshot['tetherSource'] = source
+        for platform, (filename, first, last, columns) in module.FILES.items():
+            raw = module.refresh_workbook((self.templates / filename).read_bytes(), platform, snapshot, self.universe)
+            parts, _, sheets, strings = module.workbook_parts(raw)
+            cells = {x.get('r'): x for x in module.ET.fromstring(parts[sheets['Quote参数']]).iter(module.N('c'))}
+            if platform in ['base', 'four-stock']:
+                self.assertEqual(module.read_cell(cells['D8'], strings), source)
+                self.assertEqual(module.read_cell(cells['AF14'], strings), source)
+                if platform == 'base':
+                    self.assertEqual(module.read_cell(cells['K14'], strings), source)
+                else:
+                    self.assertEqual(module.read_cell(cells['K14'], strings), snapshot['quotes']['fourmeme-bnc4']['url'])
+            else:
+                if platform == 'flap':
+                    self.assertEqual(module.read_cell(cells['R7'], strings), source)
+                for row in range(first, last + 1):
+                    if module.read_cell(cells[f'E{row}'], strings) in ['BNB', 'ETH', 'USD1', 'USDG']:
+                        self.assertEqual(module.read_cell(cells[f'{columns[2]}{row}'], strings), source)
+
     def test_base_and_four_stock_share_daily_prices_and_reserve_rule(self):
         for platform in ['base', 'four-stock']:
             filename = module.FILES[platform][0]

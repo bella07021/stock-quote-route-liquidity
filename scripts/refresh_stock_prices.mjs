@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { collectNativePrices, createJsonFetcher, validatePriceTimestamps } from './native_prices.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const routes = {
@@ -81,38 +82,23 @@ export async function collectPrices(universe, fetchPairs, tetherUsd, now = () =>
     source: 'DEX Screener deepest direct route pool', tetherSource: 'https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=usd', quotes };
 }
 
+export async function refreshPrices(universe, target, { json = createJsonFetcher(), now = () => new Date(), warn = console.warn } = {}) {
+  const native = await collectNativePrices(json, { now, warn });
+  const data = await collectPrices(universe,async(chain,address)=> address === BNC4_POOL.address
+    ? (await json(`https://api.dexscreener.com/latest/dex/pairs/bsc/${BNC4_POOL.pairAddress}`)).pairs
+    : json(`https://api.dexscreener.com/token-pairs/v1/${chain}/${address}`), native.tetherUsd, now);
+  // DEX requests can take time: recheck freshness immediately before publication.
+  validatePriceTimestamps(native.nativePriceTimestamps, now());
+  Object.assign(data, native);
+  await fs.writeFile(`${target}.tmp`,JSON.stringify(data,null,2)+'\n');
+  await fs.rename(`${target}.tmp`,target);
+  return data;
+}
+
 async function main() {
   const arg = (name, fallback) => process.argv.includes(name) ? path.resolve(process.argv[process.argv.indexOf(name)+1]) : path.join(root,fallback);
   const universe = JSON.parse(await fs.readFile(arg('--universe','asset-universe.json'),'utf8'));
-  const target = arg('--snapshot','stock-price-data.json');
-  let lastCall = 0;
-  async function json(url) {
-    let lastError;
-    for (let attempt=0; attempt<3; attempt++) {
-      try {
-        await new Promise(resolve => setTimeout(resolve,Math.max(0,500-(Date.now()-lastCall))));
-        lastCall = Date.now();
-        const response = await fetch(url,{signal:AbortSignal.timeout(20_000),headers:{accept:'application/json'}});
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return await response.json();
-      } catch(error) {
-        lastError = error;
-        if(attempt<2) await new Promise(resolve=>setTimeout(resolve,2000*(attempt+1)));
-      }
-    }
-    throw new Error(`${url}: ${lastError.message}; previous snapshot preserved`);
-  }
-  const nativeSource = 'https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2&vs_currencies=usd';
-  const tether = await json(nativeSource);
-  const nativePricesUsd = {ETH:Number(tether.ethereum?.usd),BNB:Number(tether.binancecoin?.usd),SOL:Number(tether.solana?.usd),HYPE:Number(tether.hyperliquid?.usd),ASTER:Number(tether['aster-2']?.usd)};
-  if(Object.values(nativePricesUsd).some(value=>!Number.isFinite(value)||value<=0))throw new Error('Native quote price missing; previous snapshot preserved');
-  const data = await collectPrices(universe,async(chain,address)=> address === BNC4_POOL.address
-    ? (await json(`https://api.dexscreener.com/latest/dex/pairs/bsc/${BNC4_POOL.pairAddress}`)).pairs
-    : json(`https://api.dexscreener.com/token-pairs/v1/${chain}/${address}`),Number(tether.tether?.usd));
-  data.nativePricesUsd = nativePricesUsd;
-  data.nativeSource = nativeSource;
-  await fs.writeFile(`${target}.tmp`,JSON.stringify(data,null,2)+'\n');
-  await fs.rename(`${target}.tmp`,target);
+  const data = await refreshPrices(universe, arg('--snapshot','stock-price-data.json'));
   console.log(JSON.stringify({updatedAt:data.updatedAt,priced:Object.values(data.quotes).filter(q=>q.priceUsd>0).length,total:Object.keys(data.quotes).length}));
 }
 if(process.argv[1] && path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) main().catch(error=>{console.error(error.message);process.exitCode=1;});
