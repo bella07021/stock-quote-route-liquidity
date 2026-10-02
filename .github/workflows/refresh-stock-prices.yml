@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - name: Verify price selection and failure preservation
-        run: node tests/stock-prices.test.mjs
+        run: node --test tests/stock-prices.test.mjs tests/native-prices.test.mjs
       - name: Verify Excel input-only refresh and failure preservation
         run: python3 tests/excel_prices_test.py
       - name: Refresh daily price snapshot
