@@ -1,30 +1,30 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04T07:07:27.804Z",
+  "updatedAt": "2026-10-05T07:19:38.506Z",
   "files": {
     "flap": {
       "filename": "Flap_BSC_RWA币股_控筹模型.xlsx",
       "path": "excel/latest/Flap_BSC_RWA币股_控筹模型.xlsx",
-      "sha256": "cb8a20af517fc8597c5a059ceae95a6114f678f9673a20ad88012c736b17d95f",
-      "bytes": 25669
+      "sha256": "b6a4edba89873fdc4da169d35e8e3ea6a3354e143c7a2972957ae85cd5b3f3f4",
+      "bytes": 25680
     },
     "ponsv2": {
       "filename": "PonsV2_股票Quote控筹模型.xlsx",
       "path": "excel/latest/PonsV2_股票Quote控筹模型.xlsx",
-      "sha256": "64134a84188bbb2e3fa1f978e918c7aa57be7597775f1cef8398347eb607c50a",
-      "bytes": 30685
+      "sha256": "2dac7d6f68cff5d9d36888d18820faacafc991ca5b61448ea5b8f25c72401fa2",
+      "bytes": 30693
     },
     "base": {
       "filename": "发射平台模型_全曲线_PonsV2.xlsx",
       "path": "excel/latest/发射平台模型_全曲线_PonsV2.xlsx",
-      "sha256": "e78ed943b8f63febf5d46120956794bffc8d2afc3693285b144ae6c017cda2da",
-      "bytes": 25606
+      "sha256": "7aa95564a8195c0be05add5349d6fb9b0ee5b31b72e558a4ac82c903527faccf",
+      "bytes": 25601
     },
     "four-stock": {
       "filename": "FourMeme_4Stock_BNC4_控筹模型.xlsx",
       "path": "excel/latest/FourMeme_4Stock_BNC4_控筹模型.xlsx",
-      "sha256": "d0fb5e46b6dd31bd7a9ff1a50b987cbc470017035a99437a39973c8f9011cb61",
-      "bytes": 22555
+      "sha256": "266a33046fcb40278a26aac9578e46bf98bc8bc1158b6cc02a0e3c6aa1ebcc0a",
+      "bytes": 22553
     }
   }
 }
