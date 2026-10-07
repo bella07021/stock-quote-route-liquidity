@@ -19,12 +19,12 @@ class PriceRefreshTests(unittest.TestCase):
         cls.universe = json.loads((ROOT / 'asset-universe.json').read_text())
         cls.snapshot = json.loads((ROOT / 'stock-price-data.json').read_text())
         # Stable test inputs; no network involved.
-        cls.snapshot['nativePricesUsd'] = {'ETH': 2000.0, 'BNB': 600.0, 'SOL': 100.0, 'HYPE': 50.0, 'ASTER': 1.0}
+        cls.snapshot['nativePricesUsd'] = {'ETH': 2000.0, 'BNB': 600.0, 'SOL': 100.0, 'HYPE': 50.0, 'ASTER': 1.0, 'MYX': 0.071}
         cls.snapshot['nativeSource'] = 'https://api.coingecko.com/api/v3/simple/price'
 
     def test_two_tab_layout_and_single_quote_price_override(self):
         for platform, (filename, _, _, _) in module.FILES.items():
-            if platform not in ['flap', 'ponsv2']:
+            if platform not in ['flap', 'flap-myx', 'ponsv2']:
                 continue
             parts, _, sheets, strings = module.workbook_parts((self.templates / filename).read_bytes())
             self.assertEqual(list(sheets), ['控筹模型', 'Quote参数'])
@@ -52,7 +52,7 @@ class PriceRefreshTests(unittest.TestCase):
             self.assertEqual(float(rows[7].get('ht')), 20)
             for address, expression in [('J23', '$G$41'), ('J28', '$G$42'), ('J24', '$G$41+$J$7'), ('J29', '$G$42+$J$7'), ('D27', '$D$8*$J$54')]:
                 self.assertEqual(cells[address].find(module.N('f')).text, expression)
-            self.assertEqual(cells['J30'].find(module.N('f')).text, '$G$42+$J$8' if platform == 'flap' else '$G$42+$J$7')
+            self.assertEqual(cells['J30'].find(module.N('f')).text, '$G$42+$J$8' if platform in ['flap', 'flap-myx'] else '$G$42+$J$7')
             retention = cells['J54'].find(module.N('f')).text
             self.assertEqual(retention, 'MAX(0,1-$J$29)*MAX(0,1-$J$30)')
             recovery = cells['D26'].find(module.N('f')).text
@@ -85,14 +85,14 @@ class PriceRefreshTests(unittest.TestCase):
 
     def test_both_workbooks_price_and_provenance_only(self):
         for platform, (filename, first, last, columns) in module.FILES.items():
-            if platform not in ['flap', 'ponsv2']:
+            if platform not in ['flap', 'flap-myx', 'ponsv2']:
                 continue
             original = (self.templates / filename).read_bytes()
             raw = module.refresh_workbook(original, platform, self.snapshot, self.universe)
             parts, wb, sheets, strings = module.workbook_parts(raw)
             sheet = module.ET.fromstring(parts[sheets['Quote参数']])
             cells = {x.get('r'): x for x in sheet.iter(module.N('c'))}
-            if platform == 'flap':
+            if platform in ['flap', 'flap-myx']:
                 self.assertAlmostEqual(float(module.read_cell(cells['P7'], strings)), 600.0 / self.snapshot['tetherUsd'])
                 self.assertEqual(module.read_cell(cells['R7'], strings), self.snapshot['nativeSource'])
             for row in range(first, last + 1):
@@ -113,7 +113,7 @@ class PriceRefreshTests(unittest.TestCase):
             output = Path(folder)
             module.publish(self.templates, output, self.snapshot, self.universe)
             manifest = json.loads((output / 'manifest.json').read_text())
-            self.assertEqual(set(manifest['files']), {'flap', 'ponsv2', 'base', 'four-stock'})
+            self.assertEqual(set(manifest['files']), {'flap', 'flap-myx', 'ponsv2', 'base', 'four-stock'})
             self.assertEqual(manifest['updatedAt'], self.snapshot['updatedAt'])
             for entry in manifest['files'].values():
                 raw = (output / entry['filename']).read_bytes()
@@ -136,10 +136,10 @@ class PriceRefreshTests(unittest.TestCase):
                 else:
                     self.assertEqual(module.read_cell(cells['K14'], strings), snapshot['quotes']['fourmeme-bnc4']['url'])
             else:
-                if platform == 'flap':
+                if platform in ['flap', 'flap-myx']:
                     self.assertEqual(module.read_cell(cells['R7'], strings), source)
                 for row in range(first, last + 1):
-                    if module.read_cell(cells[f'E{row}'], strings) in ['BNB', 'ETH', 'USD1', 'USDG']:
+                    if module.read_cell(cells[f'E{row}'], strings) in ['BNB', 'ETH', 'USD1', 'USDG', 'MYX']:
                         self.assertEqual(module.read_cell(cells[f'{columns[2]}{row}'], strings), source)
 
     def test_base_and_four_stock_share_daily_prices_and_reserve_rule(self):

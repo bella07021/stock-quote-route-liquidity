@@ -23,6 +23,7 @@ ET.register_namespace('r', REL)
 N = lambda tag: f'{{{NS}}}{tag}'
 FILES = {
     'flap': ('Flap_BSC_RWA币股_控筹模型.xlsx', 14, 36, ['P', 'Q', 'R', 'S']),
+    'flap-myx': ('Flap_MYX_控筹模型.xlsx', 14, 14, ['P', 'Q', 'R', 'S']),
     'ponsv2': ('PonsV2_股票Quote控筹模型.xlsx', 9, 63, ['S', 'T', 'U', 'V']),
     'base': ('发射平台模型_全曲线_PonsV2.xlsx', 0, 0, []),
     'four-stock': ('FourMeme_4Stock_BNC4_控筹模型.xlsx', 0, 0, []),
@@ -151,7 +152,7 @@ def refresh_workbook(raw, platform, snapshot, universe):
     xml = ET.fromstring(parts[target])
     rows = {int(row.get('r')): row for row in xml.find(N('sheetData'))}
     replaced = set()
-    if platform == 'flap':
+    if platform in ['flap', 'flap-myx']:
         # Native BNB is not one of the RWA Quote rows. A separate dated input
         # provides Gas valuation without touching scenario or budget formulas.
         price = snapshot['nativePricesUsd']['BNB'] / snapshot['tetherUsd']
@@ -187,6 +188,8 @@ def refresh_workbook(raw, platform, snapshot, universe):
             values = [price, serial_date(snapshot['updatedAt']), snapshot['nativeSource'], '每日原生币价格；本地可手动更新']
         elif symbol in ['USD1', 'USDG']:
             values = [1 / snapshot['tetherUsd'], serial_date(snapshot['updatedAt']), snapshot['tetherSource'], f'{symbol} 按 1 USD 估算；本地可手动更新']
+        elif symbol == 'MYX':
+            values = [snapshot['nativePricesUsd']['MYX'] / snapshot['tetherUsd'], serial_date(snapshot['updatedAt']), snapshot['nativeSource'], 'MYX 每日价格；本地可手动更新']
         else:
             raise ValueError(f'{platform}/{symbol}: unmapped workbook Quote')
         for column, value in zip(columns, values):
@@ -264,7 +267,7 @@ def publish(templates, output, snapshot, universe):
     serial_date(snapshot['updatedAt'])
     outputs = {}
     manifest = {'schemaVersion': 1, 'updatedAt': snapshot['updatedAt'], 'files': {}}
-    # Build and validate all four before replacing any previous file.
+    # Build and validate all workbooks before replacing any previous file.
     for platform, (filename, _, _, _) in FILES.items():
         raw = refresh_workbook((templates / filename).read_bytes(), platform, snapshot, universe)
         outputs[filename] = raw

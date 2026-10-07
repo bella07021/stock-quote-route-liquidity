@@ -4,7 +4,7 @@
   "updatedAt": "2026-10-06T07:45:51.308Z",
   "tetherUsd": 0.999819,
   "source": "DEX Screener deepest direct route pool",
-  "tetherSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2&vs_currencies=usd&include_last_updated_at=true",
+  "tetherSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2,myx-finance&vs_currencies=usd&include_last_updated_at=true",
   "quotes": {
     "flap-spcxb": {
       "symbol": "SPCXB",
@@ -730,9 +730,10 @@
     "BNB": 779.65,
     "SOL": 120.1,
     "HYPE": 92.91,
-    "ASTER": 0.735277
+    "ASTER": 0.735277,
+    "MYX": 0.071137
   },
-  "nativeSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2&vs_currencies=usd&include_last_updated_at=true",
+  "nativeSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2,myx-finance&vs_currencies=usd&include_last_updated_at=true",
   "nativePriceProvider": "CoinGecko",
   "nativePriceTimestamps": {
     "USDT": 1791272620,
@@ -740,6 +741,7 @@
     "BNB": 1791272620,
     "SOL": 1791272620,
     "HYPE": 1791272620,
-    "ASTER": 1791272630
+    "ASTER": 1791272630,
+    "MYX": 1791350030
   }
 }

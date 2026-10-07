@@ -1,7 +1,7 @@
 // Keep USD/USDT conversion and native Quote prices on one complete, dated source.
 export const NATIVE_IDS = {
   USDT: 'tether', ETH: 'ethereum', BNB: 'binancecoin', SOL: 'solana',
-  HYPE: 'hyperliquid', ASTER: 'aster-2',
+  HYPE: 'hyperliquid', ASTER: 'aster-2', MYX: 'myx-finance',
 };
 export const MAX_PRICE_AGE_SECONDS = 15 * 60;
 const MAX_FUTURE_SECONDS = 60;

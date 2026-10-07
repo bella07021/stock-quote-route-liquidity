@@ -10,7 +10,7 @@ import { refreshPrices, BNC4_POOL } from '../scripts/refresh_stock_prices.mjs';
 const stamp = 1_790_000_000;
 const now = () => new Date(stamp * 1000);
 const quiet = { now, warn: () => {} };
-const values = { USDT: 0.999, ETH: 2700, BNB: 700, SOL: 120, HYPE: 90, ASTER: 0.7 };
+const values = { USDT: 0.999, ETH: 2700, BNB: 700, SOL: 120, HYPE: 90, ASTER: 0.7, MYX: 0.071 };
 const primary = () => Object.fromEntries(Object.entries(NATIVE_IDS).map(([symbol, id]) =>
   [id, { usd: values[symbol], last_updated_at: stamp - 30 }]));
 const fallback = () => ({ coins: Object.fromEntries(Object.entries(NATIVE_IDS).map(([symbol, id]) =>
@@ -24,6 +24,7 @@ test('valid CoinGecko remains preferred, with exact USD IDs and source timestamp
   assert.deepEqual(calls, [COINGECKO_SOURCE]);
   assert.equal(result.tetherUsd, values.USDT);
   assert.equal(result.nativePricesUsd.ASTER, values.ASTER);
+  assert.equal(result.nativePricesUsd.MYX, values.MYX);
   assert.equal(result.nativePriceTimestamps.USDT, stamp - 30);
   assert.equal(result.nativePriceProvider, 'CoinGecko');
   assert.equal(result.nativeSource, COINGECKO_SOURCE);
