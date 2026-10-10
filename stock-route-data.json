@@ -1,5 +1,5 @@
 {
-  "snapshotDate": "2026-10-09",
+  "snapshotDate": "2026-10-10",
   "thresholdUsd": 900000,
   "platforms": {
     "ponsv2": {
@@ -9,18 +9,18 @@
           "symbol": "AAPL",
           "name": "Apple",
           "address": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
-          "tvlUsd": 270131.75,
+          "tvlUsd": 269454.59,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x8bb3514e2204e1cdf3ac149efee7ff04d91b719f",
-              "tvlUsd": 270131.75
+              "tvlUsd": 269454.59
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
-          "cutoffUtc": "2026-10-09T02:10:10.072Z"
+          "cutoffUtc": "2026-10-10T01:45:24.689Z"
         },
         {
           "symbol": "AMC",
@@ -32,7 +32,7 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x05a3d1cd21d0c88145e82600e62e7e496e0f222b",
-          "cutoffUtc": "2026-10-09T02:10:10.606Z"
+          "cutoffUtc": "2026-10-10T01:45:24.896Z"
         },
         {
           "symbol": "AMD",
@@ -40,11 +40,11 @@
           "address": "0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 30,
+          "returnedPairs": 28,
           "pools": [],
-          "coverage": "返回30池，可能截断",
+          "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
-          "cutoffUtc": "2026-10-09T02:10:10.986Z"
+          "cutoffUtc": "2026-10-10T01:45:25.395Z"
         },
         {
           "symbol": "AMZN",
@@ -56,7 +56,7 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x12f190a9f9d7d37a250758b26824b97ce941bf54",
-          "cutoffUtc": "2026-10-09T02:10:11.482Z"
+          "cutoffUtc": "2026-10-10T01:45:25.898Z"
         },
         {
           "symbol": "BABA",
@@ -64,11 +64,11 @@
           "address": "0xad25ac6c84d497db898fa1e8387bf6af3532a1c4",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 13,
+          "returnedPairs": 19,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xad25ac6c84d497db898fa1e8387bf6af3532a1c4",
-          "cutoffUtc": "2026-10-09T02:10:12.055Z"
+          "cutoffUtc": "2026-10-10T01:45:26.391Z"
         },
         {
           "symbol": "BB",
@@ -80,7 +80,7 @@
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x48e39e56acdba37b09020c0b734a613c9a2f100a",
-          "cutoffUtc": "2026-10-09T02:10:12.482Z"
+          "cutoffUtc": "2026-10-10T01:45:26.896Z"
         },
         {
           "symbol": "BE",
@@ -88,11 +88,11 @@
           "address": "0x822cc93ffd030293e9842c30bbd678f530701867",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 13,
+          "returnedPairs": 9,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x822cc93ffd030293e9842c30bbd678f530701867",
-          "cutoffUtc": "2026-10-09T02:10:13.076Z"
+          "cutoffUtc": "2026-10-10T01:45:27.390Z"
         },
         {
           "symbol": "BULL",
@@ -100,28 +100,28 @@
           "address": "0xcef9027c7d6985b85f0ba431125073529a947a68",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 7,
+          "returnedPairs": 19,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xcef9027c7d6985b85f0ba431125073529a947a68",
-          "cutoffUtc": "2026-10-09T02:10:13.569Z"
+          "cutoffUtc": "2026-10-10T01:45:27.894Z"
         },
         {
           "symbol": "COIN",
           "name": "Coinbase",
           "address": "0x6330d8c3178a418788df01a47479c0ce7ccf450b",
-          "tvlUsd": 763337.24,
+          "tvlUsd": 779026.69,
           "poolCount": 1,
           "returnedPairs": 22,
           "pools": [
             {
               "address": "0x6707aeac7d0e519b083219d27bb427364363183a",
-              "tvlUsd": 763337.24
+              "tvlUsd": 779026.69
             }
           ],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x6330d8c3178a418788df01a47479c0ce7ccf450b",
-          "cutoffUtc": "2026-10-09T02:10:14.086Z"
+          "cutoffUtc": "2026-10-10T01:45:28.395Z"
         },
         {
           "symbol": "COST",
@@ -129,11 +129,11 @@
           "address": "0x4ea005168d7f09a7a0ba9d1def21a479950e44c2",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 20,
+          "returnedPairs": 18,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x4ea005168d7f09a7a0ba9d1def21a479950e44c2",
-          "cutoffUtc": "2026-10-09T02:10:14.545Z"
+          "cutoffUtc": "2026-10-10T01:45:28.862Z"
         },
         {
           "symbol": "CRCL",
@@ -141,11 +141,11 @@
           "address": "0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 28,
+          "returnedPairs": 30,
           "pools": [],
-          "coverage": "返回少于30池",
+          "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5",
-          "cutoffUtc": "2026-10-09T02:10:14.985Z"
+          "cutoffUtc": "2026-10-10T01:45:29.364Z"
         },
         {
           "symbol": "DELL",
@@ -153,28 +153,28 @@
           "address": "0x941ae714ec6d8130c7b75d67160ca08f1e7d11dd",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 8,
+          "returnedPairs": 10,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x941ae714ec6d8130c7b75d67160ca08f1e7d11dd",
-          "cutoffUtc": "2026-10-09T02:10:15.570Z"
+          "cutoffUtc": "2026-10-10T01:45:29.892Z"
         },
         {
           "symbol": "DJT",
           "name": "Trump Media & Technology Group",
           "address": "0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
-          "tvlUsd": 141530.85,
+          "tvlUsd": 142817,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x81b4caac5d313ea0c831c4d16f8c23937602dcf1",
-              "tvlUsd": 141530.85
+              "tvlUsd": 142817
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
-          "cutoffUtc": "2026-10-09T02:10:16.090Z"
+          "cutoffUtc": "2026-10-10T01:45:30.395Z"
         },
         {
           "symbol": "F",
@@ -182,11 +182,11 @@
           "address": "0x25c288e6d899b9bc30160965ad9644c67e73be0c",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 8,
+          "returnedPairs": 4,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x25c288e6d899b9bc30160965ad9644c67e73be0c",
-          "cutoffUtc": "2026-10-09T02:10:16.582Z"
+          "cutoffUtc": "2026-10-10T01:45:30.863Z"
         },
         {
           "symbol": "FIG",
@@ -198,24 +198,24 @@
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x41f4267525a8aff329540ef24fd83d9044758b33",
-          "cutoffUtc": "2026-10-09T02:10:16.990Z"
+          "cutoffUtc": "2026-10-10T01:45:31.404Z"
         },
         {
           "symbol": "GLD",
           "name": "SPDR Gold Shares",
           "address": "0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e",
-          "tvlUsd": 208120.23,
+          "tvlUsd": 206120.05,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x98996e833ea35ec17c3645ca7b6dd40d188564c4",
-              "tvlUsd": 208120.23
+              "tvlUsd": 206120.05
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e",
-          "cutoffUtc": "2026-10-09T02:10:17.544Z"
+          "cutoffUtc": "2026-10-10T01:45:31.892Z"
         },
         {
           "symbol": "GME",
@@ -227,36 +227,41 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x1b0e319c6a659f002271b69db8a7df2f911c153e",
-          "cutoffUtc": "2026-10-09T02:10:17.988Z"
+          "cutoffUtc": "2026-10-10T01:45:32.394Z"
         },
         {
           "symbol": "GOOGL",
           "name": "Alphabet Class A",
           "address": "0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
-          "tvlUsd": 0,
-          "poolCount": 0,
+          "tvlUsd": 440651.69,
+          "poolCount": 1,
           "returnedPairs": 30,
-          "pools": [],
+          "pools": [
+            {
+              "address": "0x8c2b4303fa0b99d07a5d3e9411497a277e65b673",
+              "tvlUsd": 440651.69
+            }
+          ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
-          "cutoffUtc": "2026-10-09T02:10:18.598Z"
+          "cutoffUtc": "2026-10-10T01:45:32.868Z"
         },
         {
           "symbol": "HIMS",
           "name": "Hims & Hers Health",
           "address": "0xccee82fe024c36fa15e1005ede3e9e4787e23d09",
-          "tvlUsd": 329864.58,
+          "tvlUsd": 334907.74,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xd10e6245961d697d975963682ece9979e9917fbc",
-              "tvlUsd": 329864.58
+              "tvlUsd": 334907.74
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xccee82fe024c36fa15e1005ede3e9e4787e23d09",
-          "cutoffUtc": "2026-10-09T02:10:18.993Z"
+          "cutoffUtc": "2026-10-10T01:45:33.395Z"
         },
         {
           "symbol": "IBM",
@@ -264,11 +269,11 @@
           "address": "0x980dcf6766fa79f5cf0c4aadb3ab477ff15a9619",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 27,
+          "returnedPairs": 22,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x980dcf6766fa79f5cf0c4aadb3ab477ff15a9619",
-          "cutoffUtc": "2026-10-09T02:10:19.583Z"
+          "cutoffUtc": "2026-10-10T01:45:33.867Z"
         },
         {
           "symbol": "INDA",
@@ -276,11 +281,11 @@
           "address": "0xacef2e09adb47ad6abebad9ff06689e60615c2b6",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 9,
+          "returnedPairs": 4,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xacef2e09adb47ad6abebad9ff06689e60615c2b6",
-          "cutoffUtc": "2026-10-09T02:10:20.091Z"
+          "cutoffUtc": "2026-10-10T01:45:34.405Z"
         },
         {
           "symbol": "JNJ",
@@ -288,11 +293,11 @@
           "address": "0x03dfbbe0ac4e7bcdafd08ed41a400326b77d8c80",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 10,
+          "returnedPairs": 8,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x03dfbbe0ac4e7bcdafd08ed41a400326b77d8c80",
-          "cutoffUtc": "2026-10-09T02:10:20.632Z"
+          "cutoffUtc": "2026-10-10T01:45:34.897Z"
         },
         {
           "symbol": "LLY",
@@ -300,11 +305,11 @@
           "address": "0x8005d266423c7ea827372c9c864491e5786600ea",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 22,
+          "returnedPairs": 20,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x8005d266423c7ea827372c9c864491e5786600ea",
-          "cutoffUtc": "2026-10-09T02:10:21.118Z"
+          "cutoffUtc": "2026-10-10T01:45:35.367Z"
         },
         {
           "symbol": "LULU",
@@ -312,28 +317,28 @@
           "address": "0x4e62068525ab11fe768e29dfd00ef909b9803016",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 25,
+          "returnedPairs": 14,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x4e62068525ab11fe768e29dfd00ef909b9803016",
-          "cutoffUtc": "2026-10-09T02:10:21.701Z"
+          "cutoffUtc": "2026-10-10T01:45:35.867Z"
         },
         {
           "symbol": "META",
           "name": "Meta Platforms",
           "address": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
-          "tvlUsd": 455366.99,
+          "tvlUsd": 455427.63,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xa4bdb396a69617eb7f70e2cc1ef526f7340b1b0d",
-              "tvlUsd": 455366.99
+              "tvlUsd": 455427.63
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
-          "cutoffUtc": "2026-10-09T02:10:22.098Z"
+          "cutoffUtc": "2026-10-10T01:45:36.367Z"
         },
         {
           "symbol": "MRNA",
@@ -341,11 +346,11 @@
           "address": "0x43b07d15ce533bec5476d70c22a78a1b2b662155",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 16,
+          "returnedPairs": 15,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x43b07d15ce533bec5476d70c22a78a1b2b662155",
-          "cutoffUtc": "2026-10-09T02:10:22.491Z"
+          "cutoffUtc": "2026-10-10T01:45:36.900Z"
         },
         {
           "symbol": "MRVL",
@@ -353,11 +358,11 @@
           "address": "0x62fd0668e10d8b72339be2dcf7643001688ff13b",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 7,
+          "returnedPairs": 3,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x62fd0668e10d8b72339be2dcf7643001688ff13b",
-          "cutoffUtc": "2026-10-09T02:10:23.059Z"
+          "cutoffUtc": "2026-10-10T01:45:37.369Z"
         },
         {
           "symbol": "MSFT",
@@ -369,66 +374,66 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xe93237c50d904957cf27e7b1133b510c669c2e74",
-          "cutoffUtc": "2026-10-09T02:10:23.610Z"
+          "cutoffUtc": "2026-10-10T01:45:37.870Z"
         },
         {
           "symbol": "MSTR",
           "name": "Strategy",
           "address": "0xec262a75e413fafd0df80480274532c79d42da09",
-          "tvlUsd": 539745.18,
+          "tvlUsd": 529600.02,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x70504a6fafdbfb75fe971faa4dd716e79ac5624c",
-              "tvlUsd": 539745.18
+              "tvlUsd": 529600.02
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xec262a75e413fafd0df80480274532c79d42da09",
-          "cutoffUtc": "2026-10-09T02:10:24.009Z"
+          "cutoffUtc": "2026-10-10T01:45:38.371Z"
         },
         {
           "symbol": "MU",
           "name": "Micron Technology",
           "address": "0xff080c8ce2e5feadaca0da81314ae59d232d4afd",
-          "tvlUsd": 338848.61,
+          "tvlUsd": 337773.58,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x301f48ec369bb3bfa0bc04d44a79037aa0ee2340",
-              "tvlUsd": 338848.61
+              "tvlUsd": 337773.58
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xff080c8ce2e5feadaca0da81314ae59d232d4afd",
-          "cutoffUtc": "2026-10-09T02:10:24.495Z"
+          "cutoffUtc": "2026-10-10T01:45:38.871Z"
         },
         {
           "symbol": "NVDA",
           "name": "NVIDIA",
           "address": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
-          "tvlUsd": 1312284.9,
+          "tvlUsd": 1366658.57,
           "poolCount": 3,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x62ab521f71431f78ac374cdbadc6cda3c8916b6c",
-              "tvlUsd": 911917.86
+              "tvlUsd": 929372.17
             },
             {
               "address": "0xf8996e22ac7a67fae741830ad83b3b4d5e5de203",
-              "tvlUsd": 113686.42
+              "tvlUsd": 110967.8
             },
             {
               "address": "0xc0be1cb0f674d9737c72b2a63fc542361185b807",
-              "tvlUsd": 286680.62
+              "tvlUsd": 326318.6
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
-          "cutoffUtc": "2026-10-09T02:10:24.993Z"
+          "cutoffUtc": "2026-10-10T01:45:39.381Z"
         },
         {
           "symbol": "NFLX",
@@ -436,11 +441,11 @@
           "address": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 24,
+          "returnedPairs": 20,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
-          "cutoffUtc": "2026-10-09T02:10:25.571Z"
+          "cutoffUtc": "2026-10-10T01:45:39.872Z"
         },
         {
           "symbol": "NU",
@@ -448,11 +453,11 @@
           "address": "0x408c14038a04f7bd235329e26d2bf569ee20e250",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 9,
+          "returnedPairs": 8,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x408c14038a04f7bd235329e26d2bf569ee20e250",
-          "cutoffUtc": "2026-10-09T02:10:26.128Z"
+          "cutoffUtc": "2026-10-10T01:45:40.375Z"
         },
         {
           "symbol": "PFE",
@@ -460,11 +465,11 @@
           "address": "0x7066a64c24e4206cd62e83bf198c1e7eb361f51e",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 19,
+          "returnedPairs": 14,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x7066a64c24e4206cd62e83bf198c1e7eb361f51e",
-          "cutoffUtc": "2026-10-09T02:10:26.595Z"
+          "cutoffUtc": "2026-10-10T01:45:40.877Z"
         },
         {
           "symbol": "PLTR",
@@ -476,58 +481,58 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a",
-          "cutoffUtc": "2026-10-09T02:10:26.993Z"
+          "cutoffUtc": "2026-10-10T01:45:41.378Z"
         },
         {
           "symbol": "QQQ",
           "name": "Invesco QQQ",
           "address": "0xd5f3879160bc7c32ebb4dc785f8a4f505888de68",
-          "tvlUsd": 280159.29,
+          "tvlUsd": 281175.58,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xa40d00a55d43ba2d188039dcf88bd68f4f133e78",
-              "tvlUsd": 280159.29
+              "tvlUsd": 281175.58
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0xd5f3879160bc7c32ebb4dc785f8a4f505888de68",
-          "cutoffUtc": "2026-10-09T02:10:27.494Z"
+          "cutoffUtc": "2026-10-10T01:45:41.876Z"
         },
         {
           "symbol": "RBLX",
           "name": "Roblox",
           "address": "0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8",
-          "tvlUsd": 200202.86,
+          "tvlUsd": 205871.29,
           "poolCount": 1,
-          "returnedPairs": 22,
+          "returnedPairs": 27,
           "pools": [
             {
               "address": "0x6d25417718a8d6c529130a8ccc4bfbf0a18219d3",
-              "tvlUsd": 200202.86
+              "tvlUsd": 205871.29
             }
           ],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8",
-          "cutoffUtc": "2026-10-09T02:10:28.078Z"
+          "cutoffUtc": "2026-10-10T01:45:42.376Z"
         },
         {
           "symbol": "RDDT",
           "name": "Reddit",
           "address": "0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
-          "tvlUsd": 126378.76,
+          "tvlUsd": 128877.65,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x714187eed11d8fc9500ff6798734c8bb63a8a19b",
-              "tvlUsd": 126378.76
+              "tvlUsd": 128877.65
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
-          "cutoffUtc": "2026-10-09T02:10:28.556Z"
+          "cutoffUtc": "2026-10-10T01:45:42.881Z"
         },
         {
           "symbol": "RIVN",
@@ -535,28 +540,28 @@
           "address": "0xb1bf26c1d20ff267a4f93550d1e0d06ac40a114b",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 11,
+          "returnedPairs": 10,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xb1bf26c1d20ff267a4f93550d1e0d06ac40a114b",
-          "cutoffUtc": "2026-10-09T02:10:29.108Z"
+          "cutoffUtc": "2026-10-10T01:45:43.378Z"
         },
         {
           "symbol": "SGOV",
           "name": "iShares 0-3 Month Treasury Bond",
           "address": "0x92fd66527192e3e61d4ddd13322aa222de86f9b5",
-          "tvlUsd": 122124.56,
+          "tvlUsd": 122744.42,
           "poolCount": 1,
-          "returnedPairs": 24,
+          "returnedPairs": 29,
           "pools": [
             {
               "address": "0x7f310e3d05e575bd449e4484ef5da15863ea43b1",
-              "tvlUsd": 122124.56
+              "tvlUsd": 122744.42
             }
           ],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x92fd66527192e3e61d4ddd13322aa222de86f9b5",
-          "cutoffUtc": "2026-10-09T02:10:29.495Z"
+          "cutoffUtc": "2026-10-10T01:45:43.879Z"
         },
         {
           "symbol": "SHOP",
@@ -564,11 +569,11 @@
           "address": "0xf53f66751b1eff985311b693531e3290f600c410",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 10,
+          "returnedPairs": 7,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xf53f66751b1eff985311b693531e3290f600c410",
-          "cutoffUtc": "2026-10-09T02:10:30.076Z"
+          "cutoffUtc": "2026-10-10T01:45:44.377Z"
         },
         {
           "symbol": "SKHY",
@@ -576,11 +581,11 @@
           "address": "0x84cab63bc87912e71ad199ff14a0ba45de68fef8",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 12,
+          "returnedPairs": 7,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x84cab63bc87912e71ad199ff14a0ba45de68fef8",
-          "cutoffUtc": "2026-10-09T02:10:30.548Z"
+          "cutoffUtc": "2026-10-10T01:45:44.877Z"
         },
         {
           "symbol": "SLV",
@@ -588,11 +593,11 @@
           "address": "0x411efb0e7f985935daec3d4c3ebaea0d0ad7d89f",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 22,
+          "returnedPairs": 16,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x411efb0e7f985935daec3d4c3ebaea0d0ad7d89f",
-          "cutoffUtc": "2026-10-09T02:10:31.011Z"
+          "cutoffUtc": "2026-10-10T01:45:45.378Z"
         },
         {
           "symbol": "SNAP",
@@ -600,11 +605,11 @@
           "address": "0xf6589f11bc40b669e584073f428b05562f568733",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 26,
+          "returnedPairs": 28,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xf6589f11bc40b669e584073f428b05562f568733",
-          "cutoffUtc": "2026-10-09T02:10:31.613Z"
+          "cutoffUtc": "2026-10-10T01:45:45.881Z"
         },
         {
           "symbol": "SNDK",
@@ -612,66 +617,66 @@
           "address": "0xb90a19ff0af67f7779aff50a882a9cff42446400",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 26,
+          "returnedPairs": 21,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xb90a19ff0af67f7779aff50a882a9cff42446400",
-          "cutoffUtc": "2026-10-09T02:10:32.050Z"
+          "cutoffUtc": "2026-10-10T01:45:46.430Z"
         },
         {
           "symbol": "SPCX",
           "name": "SpaceX Class A",
           "address": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
-          "tvlUsd": 673004.79,
+          "tvlUsd": 592249.31,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xc3c9f0171490ef0f4536fe493f3b0ebb5ee0cb5e",
-              "tvlUsd": 673004.79
+              "tvlUsd": 592249.31
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
-          "cutoffUtc": "2026-10-09T02:10:32.521Z"
+          "cutoffUtc": "2026-10-10T01:45:46.881Z"
         },
         {
           "symbol": "SPY",
           "name": "SPDR S&P 500 ETF",
           "address": "0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
-          "tvlUsd": 1812730.06,
+          "tvlUsd": 1838960.64,
           "poolCount": 2,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xddcbba3666f578e3f09516f21ff85bfee859ab5e",
-              "tvlUsd": 1693471.04
+              "tvlUsd": 1719343.93
             },
             {
               "address": "0x3e1afde90341f843c941ff4077d915bde3008c7e",
-              "tvlUsd": 119259.02
+              "tvlUsd": 119616.71
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
-          "cutoffUtc": "2026-10-09T02:10:32.994Z"
+          "cutoffUtc": "2026-10-10T01:45:47.383Z"
         },
         {
           "symbol": "TSLA",
           "name": "Tesla",
           "address": "0x322f0929c4625ed5bad873c95208d54e1c003b2d",
-          "tvlUsd": 359229.75,
+          "tvlUsd": 354958.08,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xa953ca88ff430e9487c60ca34d757414f4efda07",
-              "tvlUsd": 359229.75
+              "tvlUsd": 354958.08
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/robinhood/0x322f0929c4625ed5bad873c95208d54e1c003b2d",
-          "cutoffUtc": "2026-10-09T02:10:33.497Z"
+          "cutoffUtc": "2026-10-10T01:45:47.885Z"
         },
         {
           "symbol": "TSM",
@@ -679,11 +684,11 @@
           "address": "0x58ffe4a942d3885baa22d7520691f611ef09e7aa",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 18,
+          "returnedPairs": 20,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x58ffe4a942d3885baa22d7520691f611ef09e7aa",
-          "cutoffUtc": "2026-10-09T02:10:34.079Z"
+          "cutoffUtc": "2026-10-10T01:45:48.412Z"
         },
         {
           "symbol": "TTWO",
@@ -691,11 +696,11 @@
           "address": "0x5e81213613b6b86eab4c6c50d718d34359459786",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 30,
+          "returnedPairs": 22,
           "pools": [],
-          "coverage": "返回30池，可能截断",
+          "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x5e81213613b6b86eab4c6c50d718d34359459786",
-          "cutoffUtc": "2026-10-09T02:10:34.603Z"
+          "cutoffUtc": "2026-10-10T01:45:48.942Z"
         },
         {
           "symbol": "UPS",
@@ -703,11 +708,11 @@
           "address": "0xf23250dac154d05bb671cb0d0ebef3c635c79ce2",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 11,
+          "returnedPairs": 7,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xf23250dac154d05bb671cb0d0ebef3c635c79ce2",
-          "cutoffUtc": "2026-10-09T02:10:35.093Z"
+          "cutoffUtc": "2026-10-10T01:45:49.383Z"
         },
         {
           "symbol": "USO",
@@ -715,11 +720,11 @@
           "address": "0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 22,
+          "returnedPairs": 19,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344",
-          "cutoffUtc": "2026-10-09T02:10:35.586Z"
+          "cutoffUtc": "2026-10-10T01:45:49.964Z"
         },
         {
           "symbol": "WYFI",
@@ -727,14 +732,14 @@
           "address": "0x9e7abd3c9139d14e4c86dce0e455aab7a0c2fb3e",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 8,
+          "returnedPairs": 7,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/robinhood/0x9e7abd3c9139d14e4c86dce0e455aab7a0c2fb3e",
-          "cutoffUtc": "2026-10-09T02:10:36.103Z"
+          "cutoffUtc": "2026-10-10T01:45:50.386Z"
         }
       ],
-      "updatedAt": "2026-10-09T02:10:36.103Z",
+      "updatedAt": "2026-10-10T01:45:50.387Z",
       "sourceLabel": "DEX Screener 公共 API"
     },
     "flap": {
@@ -744,276 +749,276 @@
           "symbol": "SPCXB",
           "name": "SpaceX",
           "address": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
-          "tvlUsd": 2676257.1399999997,
+          "tvlUsd": 2684874.29,
           "poolCount": 2,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x51a45a72cc96ca3ba615e25e80a6af2740ae2e2d",
-              "tvlUsd": 756683.01
+              "tvlUsd": 832628.78
             },
             {
               "address": "0x977daffc095b33872e2741c19568925015c35b4d",
-              "tvlUsd": 1919574.13
+              "tvlUsd": 1852245.51
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
-          "cutoffUtc": "2026-10-09T02:10:36.560Z"
+          "cutoffUtc": "2026-10-10T01:45:50.939Z"
         },
         {
           "symbol": "SKHYB",
           "name": "SK Hynix",
           "address": "0xca750ef65f295bbecd685abf54e82caf297bdb61",
-          "tvlUsd": 759783.09,
+          "tvlUsd": 778985.65,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xd7d30f434b12f7ed9b0ae11ff1c754745a10ad52",
-              "tvlUsd": 759783.09
+              "tvlUsd": 778985.65
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0xca750ef65f295bbecd685abf54e82caf297bdb61",
-          "cutoffUtc": "2026-10-09T02:10:37.096Z"
+          "cutoffUtc": "2026-10-10T01:45:51.421Z"
         },
         {
           "symbol": "SPYB",
           "name": "SPY",
           "address": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
-          "tvlUsd": 242838.27,
+          "tvlUsd": 237245.43,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x7aa6d92fc369a8c1edc631a3aac44efb0808ddbf",
-              "tvlUsd": 242838.27
+              "tvlUsd": 237245.43
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
-          "cutoffUtc": "2026-10-09T02:10:37.584Z"
+          "cutoffUtc": "2026-10-10T01:45:51.919Z"
         },
         {
           "symbol": "XAUT",
           "name": "Tether Gold",
           "address": "0x21caef8a43163eea865baee23b9c2e327696a3bf",
-          "tvlUsd": 2028626.42,
+          "tvlUsd": 2018149.79,
           "poolCount": 2,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x83a0a8a723262651ae9c54bbba929f167443bc59",
-              "tvlUsd": 1797735.93
+              "tvlUsd": 1790268.96
             },
             {
               "address": "0xc655e1a100a084d9ac91c269b0a7cb0e62263fcf",
-              "tvlUsd": 230890.49
+              "tvlUsd": 227880.83
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x21caef8a43163eea865baee23b9c2e327696a3bf",
-          "cutoffUtc": "2026-10-09T02:10:38.060Z"
+          "cutoffUtc": "2026-10-10T01:45:52.417Z"
         },
         {
           "symbol": "QQQB",
           "name": "Invesco QQQ Trust",
           "address": "0x205812cdbed920aff76c6580abd681a46d11efc7",
-          "tvlUsd": 417065.05,
+          "tvlUsd": 645646.89,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xe531fcb1f5a195de7608b9f4f9518544c2cdb693",
-              "tvlUsd": 417065.05
+              "tvlUsd": 645646.89
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x205812cdbed920aff76c6580abd681a46d11efc7",
-          "cutoffUtc": "2026-10-09T02:10:38.624Z"
+          "cutoffUtc": "2026-10-10T01:45:52.921Z"
         },
         {
           "symbol": "NVDAB",
           "name": "NVIDIA Corp",
           "address": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
-          "tvlUsd": 7270199.13,
+          "tvlUsd": 7397379.97,
           "poolCount": 3,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x8fb4243b553ac29ba088acf00b9b7da24bd6690c",
-              "tvlUsd": 6097298.6
+              "tvlUsd": 6252796.35
             },
             {
               "address": "0xdd9d5164ccbc57be377a964fc064135b03d06177",
-              "tvlUsd": 443699.49
+              "tvlUsd": 518465.84
             },
             {
               "address": "0x18d52270d09ab842c87acd45977dcf64a82fa4ad",
-              "tvlUsd": 729201.04
+              "tvlUsd": 626117.78
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
-          "cutoffUtc": "2026-10-09T02:10:39.048Z"
+          "cutoffUtc": "2026-10-10T01:45:53.420Z"
         },
         {
           "symbol": "AAPLB",
           "name": "Apple",
           "address": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
-          "tvlUsd": 592044.49,
+          "tvlUsd": 759098.95,
           "poolCount": 2,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xe9b9998b2ec5430d2246c7f1f8d9f298c97d7365",
-              "tvlUsd": 490679.65
+              "tvlUsd": 657346.46
             },
             {
               "address": "0x36c0fc3159eb8662a2e1b84a4df518d916bce0e1",
-              "tvlUsd": 101364.84
+              "tvlUsd": 101752.49
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
-          "cutoffUtc": "2026-10-09T02:10:39.584Z"
+          "cutoffUtc": "2026-10-10T01:45:53.921Z"
         },
         {
           "symbol": "TSLAB",
           "name": "Tesla",
           "address": "0x5b1910eaad6450e50f816082aa078c41f10c292f",
-          "tvlUsd": 1900981.45,
+          "tvlUsd": 1912689.33,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xb0f5e5400e8f0f7c242f2b7740c004f020579c41",
-              "tvlUsd": 1900981.45
+              "tvlUsd": 1912689.33
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x5b1910eaad6450e50f816082aa078c41f10c292f",
-          "cutoffUtc": "2026-10-09T02:10:40.064Z"
+          "cutoffUtc": "2026-10-10T01:45:54.422Z"
         },
         {
           "symbol": "MSFTB",
           "name": "Microsoft",
           "address": "0x80106cb3ead06659a5ad19df39d9b4733863b9b0",
-          "tvlUsd": 239572.63,
+          "tvlUsd": 247600.41,
           "poolCount": 1,
-          "returnedPairs": 30,
+          "returnedPairs": 22,
           "pools": [
             {
               "address": "0x5018b018ceb7645c927c5cf246786f89ebcbe7ea",
-              "tvlUsd": 239572.63
+              "tvlUsd": 247600.41
             }
           ],
-          "coverage": "返回30池，可能截断",
+          "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0x80106cb3ead06659a5ad19df39d9b4733863b9b0",
-          "cutoffUtc": "2026-10-09T02:10:40.560Z"
+          "cutoffUtc": "2026-10-10T01:45:54.926Z"
         },
         {
           "symbol": "GOOGLB",
           "name": "Alphabet",
           "address": "0x3f53de71c126bdabae20f9cd64848d317f6c3238",
-          "tvlUsd": 1689433.55,
+          "tvlUsd": 1765681.31,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x89001d846f7ca36ee089f73eefc25657e1798144",
-              "tvlUsd": 1689433.55
+              "tvlUsd": 1765681.31
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x3f53de71c126bdabae20f9cd64848d317f6c3238",
-          "cutoffUtc": "2026-10-09T02:10:41.061Z"
+          "cutoffUtc": "2026-10-10T01:45:55.423Z"
         },
         {
           "symbol": "HOODB",
           "name": "Robinhood",
           "address": "0xa394dcea3fd3847fd793afbfd163e2e3858b7c65",
-          "tvlUsd": 251031.35,
+          "tvlUsd": 252405.61,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xfeef70ff6f58f0a900e28a77e5a8945afb343923",
-              "tvlUsd": 251031.35
+              "tvlUsd": 252405.61
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0xa394dcea3fd3847fd793afbfd163e2e3858b7c65",
-          "cutoffUtc": "2026-10-09T02:10:41.601Z"
+          "cutoffUtc": "2026-10-10T01:45:55.921Z"
         },
         {
           "symbol": "BABAB",
           "name": "Alibaba",
           "address": "0x4ef9d3062c7f6eba4aae4990c5036598c6eff4ec",
-          "tvlUsd": 2489441.39,
+          "tvlUsd": 2534609.55,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xfd95cb1391999006eb91797a7c62acfe88b20292",
-              "tvlUsd": 2489441.39
+              "tvlUsd": 2534609.55
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x4ef9d3062c7f6eba4aae4990c5036598c6eff4ec",
-          "cutoffUtc": "2026-10-09T02:10:42.113Z"
+          "cutoffUtc": "2026-10-10T01:45:56.422Z"
         },
         {
           "symbol": "GMEB",
           "name": "GameStop",
           "address": "0x46ceefda28dd7207059ed19b0acdc026955bb15c",
-          "tvlUsd": 148797.02,
+          "tvlUsd": 144729.45,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x908d49048eb3a7bedfd238972403842805eaf2be",
-              "tvlUsd": 148797.02
+              "tvlUsd": 144729.45
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x46ceefda28dd7207059ed19b0acdc026955bb15c",
-          "cutoffUtc": "2026-10-09T02:10:42.588Z"
+          "cutoffUtc": "2026-10-10T01:45:56.926Z"
         },
         {
           "symbol": "NFLXB",
           "name": "Netflix",
           "address": "0xd6829ea836b6fa224d099d40e54b31262f874631",
-          "tvlUsd": 179574.56,
+          "tvlUsd": 176276.11,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0xafab4441d8b354bba790229c0e235e7e6187b3d0",
-              "tvlUsd": 179574.56
+              "tvlUsd": 176276.11
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0xd6829ea836b6fa224d099d40e54b31262f874631",
-          "cutoffUtc": "2026-10-09T02:10:43.060Z"
+          "cutoffUtc": "2026-10-10T01:45:57.421Z"
         },
         {
           "symbol": "MSTRB",
           "name": "Strategy",
           "address": "0xe87afb3076aeb0f9b14e368de8145ae6a2826a14",
-          "tvlUsd": 391049.34,
+          "tvlUsd": 401362.21,
           "poolCount": 1,
-          "returnedPairs": 23,
+          "returnedPairs": 13,
           "pools": [
             {
               "address": "0x692081209619735f25700557078ab084d3e5d007",
-              "tvlUsd": 391049.34
+              "tvlUsd": 401362.21
             }
           ],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0xe87afb3076aeb0f9b14e368de8145ae6a2826a14",
-          "cutoffUtc": "2026-10-09T02:10:43.568Z"
+          "cutoffUtc": "2026-10-10T01:45:57.924Z"
         },
         {
           "symbol": "DJTB",
@@ -1025,7 +1030,7 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0xf2ec508422174ee564de98187db9359d318afb6b",
-          "cutoffUtc": "2026-10-09T02:10:44.088Z"
+          "cutoffUtc": "2026-10-10T01:45:58.421Z"
         },
         {
           "symbol": "SOXSB",
@@ -1033,11 +1038,11 @@
           "address": "0xe28cd11c99af2df76bb8ada4cd0ef3904378280f",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 22,
+          "returnedPairs": 14,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0xe28cd11c99af2df76bb8ada4cd0ef3904378280f",
-          "cutoffUtc": "2026-10-09T02:10:44.555Z"
+          "cutoffUtc": "2026-10-10T01:45:58.917Z"
         },
         {
           "symbol": "SOXLB",
@@ -1045,11 +1050,11 @@
           "address": "0xd97d097a89113fa59b76c572e5b2eb647e8eefaf",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 20,
+          "returnedPairs": 12,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0xd97d097a89113fa59b76c572e5b2eb647e8eefaf",
-          "cutoffUtc": "2026-10-09T02:10:45.119Z"
+          "cutoffUtc": "2026-10-10T01:45:59.420Z"
         },
         {
           "symbol": "MRNAB",
@@ -1061,7 +1066,7 @@
           "pools": [],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x5fd86da9b05abe396fe9d02a4a213a7c00556503",
-          "cutoffUtc": "2026-10-09T02:10:45.627Z"
+          "cutoffUtc": "2026-10-10T01:45:59.930Z"
         },
         {
           "symbol": "FLNCB",
@@ -1069,28 +1074,28 @@
           "address": "0x4af1d41cd9dd950dca43984b43aaa2a8702714ac",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 30,
+          "returnedPairs": 29,
           "pools": [],
-          "coverage": "返回30池，可能截断",
+          "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0x4af1d41cd9dd950dca43984b43aaa2a8702714ac",
-          "cutoffUtc": "2026-10-09T02:10:46.086Z"
+          "cutoffUtc": "2026-10-10T01:46:00.425Z"
         },
         {
           "symbol": "FXIon",
           "name": "iShares China Large-Cap ETF",
           "address": "0x9b8e987e6fec8cf1380c4dca7071e2c7853aeea1",
-          "tvlUsd": 277687.98,
+          "tvlUsd": 394146.31,
           "poolCount": 1,
           "returnedPairs": 30,
           "pools": [
             {
               "address": "0x8768c8969e177575e37435b8295afa2dfb231c86",
-              "tvlUsd": 277687.98
+              "tvlUsd": 394146.31
             }
           ],
           "coverage": "返回30池，可能截断",
           "url": "https://dexscreener.com/bsc/0x9b8e987e6fec8cf1380c4dca7071e2c7853aeea1",
-          "cutoffUtc": "2026-10-09T02:10:46.592Z"
+          "cutoffUtc": "2026-10-10T01:46:00.925Z"
         },
         {
           "symbol": "BMNRB",
@@ -1098,11 +1103,11 @@
           "address": "0x3548da95a9effe481e8604664d75e95821e557f5",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 11,
+          "returnedPairs": 8,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0x3548da95a9effe481e8604664d75e95821e557f5",
-          "cutoffUtc": "2026-10-09T02:10:47.080Z"
+          "cutoffUtc": "2026-10-10T01:46:01.422Z"
         },
         {
           "symbol": "BILIon",
@@ -1110,20 +1115,20 @@
           "address": "0x91fc7371d6de682a1e8cfcb4eb7da693312a03a4",
           "tvlUsd": 0,
           "poolCount": 0,
-          "returnedPairs": 11,
+          "returnedPairs": 8,
           "pools": [],
           "coverage": "返回少于30池",
           "url": "https://dexscreener.com/bsc/0x91fc7371d6de682a1e8cfcb4eb7da693312a03a4",
-          "cutoffUtc": "2026-10-09T02:10:47.585Z"
+          "cutoffUtc": "2026-10-10T01:46:01.943Z"
         }
       ],
-      "updatedAt": "2026-10-09T02:10:47.585Z",
+      "updatedAt": "2026-10-10T01:46:01.943Z",
       "sourceLabel": "DEX Screener 公共 API"
     }
   },
   "sourceType": "dexscreener",
   "sourceLabel": "DEX Screener 公共 API",
   "minPoolTvlUsd": 100000,
-  "refreshStartedAt": "2026-10-09T02:10:09.966Z",
-  "updatedAt": "2026-10-09T02:10:47.585Z"
+  "refreshStartedAt": "2026-10-10T01:45:24.345Z",
+  "updatedAt": "2026-10-10T01:46:01.943Z"
 }
