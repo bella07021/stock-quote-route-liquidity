@@ -1,175 +1,175 @@
 {
   "schemaVersion": 1,
-  "startedAt": "2026-10-20T06:13:52.893Z",
-  "updatedAt": "2026-10-20T06:14:31.267Z",
-  "tetherUsd": 0.999242,
+  "startedAt": "2026-10-21T06:13:17.794Z",
+  "updatedAt": "2026-10-21T06:13:56.185Z",
+  "tetherUsd": 0.999081,
   "source": "DEX Screener deepest direct route pool",
   "tetherSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2,myx-finance&vs_currencies=usd&include_last_updated_at=true",
   "quotes": {
     "flap-spcxb": {
       "symbol": "SPCXB",
       "address": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
-      "priceUsd": 147.67,
-      "priceUsdt": 147.6741,
+      "priceUsd": 161.35,
+      "priceUsdt": 161.3536,
       "pairAddress": "0x977DaFFC095b33872E2741c19568925015C35b4d",
-      "liquidityUsd": 1643531.79,
+      "liquidityUsd": 1779980.42,
       "url": "https://dexscreener.com/bsc/0x977daffc095b33872e2741c19568925015c35b4d",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:53.319Z"
+      "fetchedAt": "2026-10-21T06:13:18.222Z"
     },
     "flap-skhyb": {
       "symbol": "SKHYB",
       "address": "0xca750ef65f295bbecd685abf54e82caf297bdb61",
-      "priceUsd": 137.41,
-      "priceUsdt": 137.4108,
-      "pairAddress": "0xD7d30F434b12F7Ed9b0Ae11fF1C754745a10aD52",
-      "liquidityUsd": 900203.01,
-      "url": "https://dexscreener.com/bsc/0xd7d30f434b12f7ed9b0ae11ff1c754745a10ad52",
+      "priceUsd": 145.82,
+      "priceUsdt": 145.8247,
+      "pairAddress": "0xee90641E7c3b4d6338Ab7f1c23Dfb979FAb5f096",
+      "liquidityUsd": 1181080.92,
+      "url": "https://dexscreener.com/bsc/0xee90641e7c3b4d6338ab7f1c23dfb979fab5f096",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:53.749Z"
+      "fetchedAt": "2026-10-21T06:13:18.669Z"
     },
     "flap-spyb": {
       "symbol": "SPYB",
       "address": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
-      "priceUsd": 768.22,
-      "priceUsdt": 768.2258,
+      "priceUsd": 773.21,
+      "priceUsdt": 773.2105,
       "pairAddress": "0x7aA6d92Fc369A8C1EDc631A3aAc44eFB0808ddbF",
-      "liquidityUsd": 214159.98,
+      "liquidityUsd": 215260.83,
       "url": "https://dexscreener.com/bsc/0x7aa6d92fc369a8c1edc631a3aac44efb0808ddbf",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:54.260Z"
+      "fetchedAt": "2026-10-21T06:13:19.173Z"
     },
     "flap-xaut": {
       "symbol": "XAUT",
       "address": "0x21caef8a43163eea865baee23b9c2e327696a3bf",
-      "priceUsd": 4124.38,
-      "priceUsdt": 4124.389,
+      "priceUsd": 4120.098,
+      "priceUsdt": 4120.09887,
       "pairAddress": "0x83A0A8A723262651Ae9C54BBbA929F167443bC59",
-      "liquidityUsd": 1976042.27,
+      "liquidityUsd": 1978057.16,
       "url": "https://dexscreener.com/bsc/0x83a0a8a723262651ae9c54bbba929f167443bc59",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:54.664Z"
+      "fetchedAt": "2026-10-21T06:13:19.660Z"
     },
     "flap-qqqb": {
       "symbol": "QQQB",
       "address": "0x205812cdbed920aff76c6580abd681a46d11efc7",
-      "priceUsd": 716.55,
-      "priceUsdt": 716.5531,
-      "pairAddress": "0xff2857Eef9563e92e9be9550989A80878d97676D",
-      "liquidityUsd": 409578.64,
-      "url": "https://dexscreener.com/bsc/0xff2857eef9563e92e9be9550989a80878d97676d",
+      "priceUsd": 722.67,
+      "priceUsdt": 722.6796,
+      "pairAddress": "0xe531fcb1F5a195de7608B9F4f9518544C2cdB693",
+      "liquidityUsd": 329591.88,
+      "url": "https://dexscreener.com/bsc/0xe531fcb1f5a195de7608b9f4f9518544c2cdb693",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:55.228Z"
+      "fetchedAt": "2026-10-21T06:13:20.146Z"
     },
     "flap-nvdab": {
       "symbol": "NVDAB",
       "address": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
-      "priceUsd": 217.35,
-      "priceUsdt": 217.3539,
+      "priceUsd": 221.19,
+      "priceUsdt": 221.198,
       "pairAddress": "0x8FB4243b553aC29BA088aCf00B9B7dA24bD6690C",
-      "liquidityUsd": 5861166.07,
+      "liquidityUsd": 5909391.01,
       "url": "https://dexscreener.com/bsc/0x8fb4243b553ac29ba088acf00b9b7da24bd6690c",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:55.730Z"
+      "fetchedAt": "2026-10-21T06:13:20.586Z"
     },
     "flap-aaplb": {
       "symbol": "AAPLB",
       "address": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
-      "priceUsd": 343.59,
-      "priceUsdt": 343.5933,
+      "priceUsd": 338.95,
+      "priceUsdt": 338.9583,
       "pairAddress": "0x755f5baA43f692550AA46Be662240eEb99Ae7502",
-      "liquidityUsd": 485751.15,
+      "liquidityUsd": 470002.7,
       "url": "https://dexscreener.com/bsc/0x755f5baa43f692550aa46be662240eeb99ae7502",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:56.232Z"
+      "fetchedAt": "2026-10-21T06:13:21.142Z"
     },
     "flap-tslab": {
       "symbol": "TSLAB",
       "address": "0x5b1910eaad6450e50f816082aa078c41f10c292f",
-      "priceUsd": 366.88,
-      "priceUsdt": 366.8804,
+      "priceUsd": 380.17,
+      "priceUsdt": 380.1739,
       "pairAddress": "0xB0f5E5400E8F0F7C242F2b7740C004f020579c41",
-      "liquidityUsd": 2042682.4,
+      "liquidityUsd": 2101849.4,
       "url": "https://dexscreener.com/bsc/0xb0f5e5400e8f0f7c242f2b7740c004f020579c41",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:56.734Z"
+      "fetchedAt": "2026-10-21T06:13:21.657Z"
     },
     "flap-msftb": {
       "symbol": "MSFTB",
       "address": "0x80106cb3ead06659a5ad19df39d9b4733863b9b0",
-      "priceUsd": 535.26,
-      "priceUsdt": 535.2662,
+      "priceUsd": 530.28,
+      "priceUsdt": 530.284,
       "pairAddress": "0x5018b018cEB7645c927c5Cf246786F89ebCbe7Ea",
-      "liquidityUsd": 150935.83,
+      "liquidityUsd": 151860.14,
       "url": "https://dexscreener.com/bsc/0x5018b018ceb7645c927c5cf246786f89ebcbe7ea",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:57.246Z"
+      "fetchedAt": "2026-10-21T06:13:22.193Z"
     },
     "flap-googlb": {
       "symbol": "GOOGLB",
       "address": "0x3f53de71c126bdabae20f9cd64848d317f6c3238",
-      "priceUsd": 344.84,
-      "priceUsdt": 344.8415,
+      "priceUsd": 341.44,
+      "priceUsdt": 341.4445,
       "pairAddress": "0x89001D846f7CA36EE089F73eEFC25657E1798144",
-      "liquidityUsd": 1558891.56,
+      "liquidityUsd": 1549276.11,
       "url": "https://dexscreener.com/bsc/0x89001d846f7ca36ee089f73eefc25657e1798144",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:57.736Z"
+      "fetchedAt": "2026-10-21T06:13:22.657Z"
     },
     "flap-hoodb": {
       "symbol": "HOODB",
       "address": "0xa394dcea3fd3847fd793afbfd163e2e3858b7c65",
-      "priceUsd": 96.24,
-      "priceUsdt": 96.2472,
+      "priceUsd": 99.61,
+      "priceUsdt": 99.6184,
       "pairAddress": "0xFEeF70FF6F58f0A900e28A77e5A8945aFB343923",
-      "liquidityUsd": 221705.21,
+      "liquidityUsd": 195285.82,
       "url": "https://dexscreener.com/bsc/0xfeef70ff6f58f0a900e28a77e5a8945afb343923",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:58.252Z"
+      "fetchedAt": "2026-10-21T06:13:23.154Z"
     },
     "flap-babab": {
       "symbol": "BABAB",
       "address": "0x4ef9d3062c7f6eba4aae4990c5036598c6eff4ec",
-      "priceUsd": 107.22,
-      "priceUsdt": 107.2297,
+      "priceUsd": 107.37,
+      "priceUsdt": 107.3736,
       "pairAddress": "0xfD95CB1391999006Eb91797a7c62acFe88b20292",
-      "liquidityUsd": 2477268.16,
+      "liquidityUsd": 2467082.73,
       "url": "https://dexscreener.com/bsc/0xfd95cb1391999006eb91797a7c62acfe88b20292",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:58.762Z"
+      "fetchedAt": "2026-10-21T06:13:23.668Z"
     },
     "flap-gmeb": {
       "symbol": "GMEB",
       "address": "0x46ceefda28dd7207059ed19b0acdc026955bb15c",
-      "priceUsd": 26.22,
-      "priceUsdt": 26.2279,
+      "priceUsd": 26.45,
+      "priceUsdt": 26.4513,
       "pairAddress": "0x908d49048EB3a7bEdfd238972403842805EAF2bE",
-      "liquidityUsd": 135565.19,
+      "liquidityUsd": 178280.33,
       "url": "https://dexscreener.com/bsc/0x908d49048eb3a7bedfd238972403842805eaf2be",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:59.329Z"
+      "fetchedAt": "2026-10-21T06:13:24.175Z"
     },
     "flap-nflxb": {
       "symbol": "NFLXB",
       "address": "0xd6829ea836b6fa224d099d40e54b31262f874631",
-      "priceUsd": 69.9,
-      "priceUsdt": 69.9087,
+      "priceUsd": 65.044,
+      "priceUsdt": 65.04448,
       "pairAddress": "0xAFab4441D8B354bBa790229c0E235E7e6187B3D0",
-      "liquidityUsd": 161256.02,
+      "liquidityUsd": 163021.37,
       "url": "https://dexscreener.com/bsc/0xafab4441d8b354bba790229c0e235e7e6187b3d0",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:13:59.730Z"
+      "fetchedAt": "2026-10-21T06:13:24.674Z"
     },
     "flap-mstrb": {
       "symbol": "MSTRB",
       "address": "0xe87afb3076aeb0f9b14e368de8145ae6a2826a14",
-      "priceUsd": 135.51,
-      "priceUsdt": 135.5131,
+      "priceUsd": 143.73,
+      "priceUsdt": 143.7311,
       "pairAddress": "0x692081209619735f25700557078aB084d3E5D007",
-      "liquidityUsd": 302314.16,
+      "liquidityUsd": 319116.41,
       "url": "https://dexscreener.com/bsc/0x692081209619735f25700557078ab084d3e5d007",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:14:00.169Z"
+      "fetchedAt": "2026-10-21T06:13:25.192Z"
     },
     "flap-djtb": {
       "symbol": "DJTB",
@@ -177,7 +177,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:00.750Z"
+      "fetchedAt": "2026-10-21T06:13:25.679Z"
     },
     "flap-soxsb": {
       "symbol": "SOXSB",
@@ -185,23 +185,29 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:01.245Z"
+      "fetchedAt": "2026-10-21T06:13:26.171Z"
     },
     "flap-soxlb": {
       "symbol": "SOXLB",
       "address": "0xd97d097a89113fa59b76c572e5b2eb647e8eefaf",
-      "priceUsd": null,
-      "priceUsdt": null,
-      "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:01.664Z"
+      "priceUsd": 103.52,
+      "priceUsdt": 103.5217,
+      "pairAddress": "0x3d7D950377eca7b4Af7233716Ff17dEF00ab2045",
+      "liquidityUsd": 104252.19,
+      "url": "https://dexscreener.com/bsc/0x3d7d950377eca7b4af7233716ff17def00ab2045",
+      "route": "USDT",
+      "fetchedAt": "2026-10-21T06:13:26.663Z"
     },
     "flap-mrnab": {
       "symbol": "MRNAB",
       "address": "0x5fd86da9b05abe396fe9d02a4a213a7c00556503",
-      "priceUsd": null,
-      "priceUsdt": null,
-      "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:02.277Z"
+      "priceUsd": 241.44,
+      "priceUsdt": 241.4408,
+      "pairAddress": "0xcC992887e9cee37a698541e2F6D1675453fbcfCC",
+      "liquidityUsd": 101838.51,
+      "url": "https://dexscreener.com/bsc/0xcc992887e9cee37a698541e2f6d1675453fbcfcc",
+      "route": "USDT",
+      "fetchedAt": "2026-10-21T06:13:27.194Z"
     },
     "flap-flncb": {
       "symbol": "FLNCB",
@@ -209,18 +215,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:02.726Z"
+      "fetchedAt": "2026-10-21T06:13:27.694Z"
     },
     "flap-fxion": {
       "symbol": "FXIon",
       "address": "0x9b8e987e6fec8cf1380c4dca7071e2c7853aeea1",
-      "priceUsd": 33.7,
-      "priceUsdt": 33.7021,
+      "priceUsd": 33.72,
+      "priceUsdt": 33.7261,
       "pairAddress": "0x8768C8969e177575e37435B8295aFa2DFB231C86",
-      "liquidityUsd": 328938.79,
+      "liquidityUsd": 359299.61,
       "url": "https://dexscreener.com/bsc/0x8768c8969e177575e37435b8295afa2dfb231c86",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:14:03.279Z"
+      "fetchedAt": "2026-10-21T06:13:28.176Z"
     },
     "flap-bmnrb": {
       "symbol": "BMNRB",
@@ -228,7 +234,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:03.738Z"
+      "fetchedAt": "2026-10-21T06:13:28.698Z"
     },
     "flap-bilion": {
       "symbol": "BILIon",
@@ -236,18 +242,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:04.272Z"
+      "fetchedAt": "2026-10-21T06:13:29.156Z"
     },
     "ponsv2-aapl": {
       "symbol": "AAPL",
       "address": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
-      "priceUsd": 343.5,
-      "priceUsdt": 343.76057051244845,
+      "priceUsd": 337.93,
+      "priceUsdt": 338.2408433350249,
       "pairAddress": "0x8bb3514e2204E1cDF3Ac149EFEe7Ff04D91B719f",
-      "liquidityUsd": 252184.58,
+      "liquidityUsd": 254404.14,
       "url": "https://dexscreener.com/robinhood/0x8bb3514e2204e1cdf3ac149efee7ff04d91b719f",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:04.741Z"
+      "fetchedAt": "2026-10-21T06:13:29.634Z"
     },
     "ponsv2-amc": {
       "symbol": "AMC",
@@ -255,7 +261,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:05.174Z"
+      "fetchedAt": "2026-10-21T06:13:30.148Z"
     },
     "ponsv2-amd": {
       "symbol": "AMD",
@@ -263,7 +269,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:05.670Z"
+      "fetchedAt": "2026-10-21T06:13:30.593Z"
     },
     "ponsv2-amzn": {
       "symbol": "AMZN",
@@ -271,7 +277,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:06.200Z"
+      "fetchedAt": "2026-10-21T06:13:31.175Z"
     },
     "ponsv2-baba": {
       "symbol": "BABA",
@@ -279,7 +285,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:06.698Z"
+      "fetchedAt": "2026-10-21T06:13:31.673Z"
     },
     "ponsv2-bb": {
       "symbol": "BB",
@@ -287,7 +293,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:07.235Z"
+      "fetchedAt": "2026-10-21T06:13:32.158Z"
     },
     "ponsv2-be": {
       "symbol": "BE",
@@ -295,7 +301,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:07.676Z"
+      "fetchedAt": "2026-10-21T06:13:32.591Z"
     },
     "ponsv2-bull": {
       "symbol": "BULL",
@@ -303,18 +309,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:08.216Z"
+      "fetchedAt": "2026-10-21T06:13:33.184Z"
     },
     "ponsv2-coin": {
       "symbol": "COIN",
       "address": "0x6330d8c3178a418788df01a47479c0ce7ccf450b",
-      "priceUsd": 168.38,
-      "priceUsdt": 168.50772885847474,
+      "priceUsd": 172.2,
+      "priceUsdt": 172.35839736718043,
       "pairAddress": "0x6707aeAc7D0e519B083219d27BB427364363183A",
-      "liquidityUsd": 810504.45,
+      "liquidityUsd": 819918.88,
       "url": "https://dexscreener.com/robinhood/0x6707aeac7d0e519b083219d27bb427364363183a",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:08.747Z"
+      "fetchedAt": "2026-10-21T06:13:33.593Z"
     },
     "ponsv2-cost": {
       "symbol": "COST",
@@ -322,7 +328,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:09.243Z"
+      "fetchedAt": "2026-10-21T06:13:34.165Z"
     },
     "ponsv2-crcl": {
       "symbol": "CRCL",
@@ -330,7 +336,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:09.705Z"
+      "fetchedAt": "2026-10-21T06:13:34.660Z"
     },
     "ponsv2-dell": {
       "symbol": "DELL",
@@ -338,18 +344,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:10.170Z"
+      "fetchedAt": "2026-10-21T06:13:35.097Z"
     },
     "ponsv2-djt": {
       "symbol": "DJT",
       "address": "0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
-      "priceUsd": 6.45,
-      "priceUsdt": 6.454892808749032,
+      "priceUsd": 6.49,
+      "priceUsdt": 6.495969796242747,
       "pairAddress": "0x81b4Caac5d313ea0c831C4D16f8c23937602dCF1",
-      "liquidityUsd": 122153,
+      "liquidityUsd": 123556.52,
       "url": "https://dexscreener.com/robinhood/0x81b4caac5d313ea0c831c4d16f8c23937602dcf1",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:10.718Z"
+      "fetchedAt": "2026-10-21T06:13:35.666Z"
     },
     "ponsv2-f": {
       "symbol": "F",
@@ -357,7 +363,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:11.244Z"
+      "fetchedAt": "2026-10-21T06:13:36.164Z"
     },
     "ponsv2-fig": {
       "symbol": "FIG",
@@ -365,18 +371,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:11.754Z"
+      "fetchedAt": "2026-10-21T06:13:36.651Z"
     },
     "ponsv2-gld": {
       "symbol": "GLD",
       "address": "0xc9a981fee1f9dec688bb123ccdecc63d0debfc4e",
-      "priceUsd": 377.88,
-      "priceUsdt": 378.1666503209433,
+      "priceUsd": 378.72,
+      "priceUsdt": 379.06836382635646,
       "pairAddress": "0x98996e833EA35EC17c3645Ca7b6Dd40d188564C4",
-      "liquidityUsd": 119919.03,
+      "liquidityUsd": 122434.05,
       "url": "https://dexscreener.com/robinhood/0x98996e833ea35ec17c3645ca7b6dd40d188564c4",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:12.253Z"
+      "fetchedAt": "2026-10-21T06:13:37.162Z"
     },
     "ponsv2-gme": {
       "symbol": "GME",
@@ -384,29 +390,29 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:12.696Z"
+      "fetchedAt": "2026-10-21T06:13:37.609Z"
     },
     "ponsv2-googl": {
       "symbol": "GOOGL",
       "address": "0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
-      "priceUsd": 346.53,
-      "priceUsdt": 346.792868994698,
+      "priceUsd": 342.86,
+      "priceUsdt": 343.1753781725406,
       "pairAddress": "0x8c2B4303fA0B99d07A5D3E9411497A277e65b673",
-      "liquidityUsd": 470460.23,
+      "liquidityUsd": 470201.08,
       "url": "https://dexscreener.com/robinhood/0x8c2b4303fa0b99d07a5d3e9411497a277e65b673",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:13.173Z"
+      "fetchedAt": "2026-10-21T06:13:38.155Z"
     },
     "ponsv2-hims": {
       "symbol": "HIMS",
       "address": "0xccee82fe024c36fa15e1005ede3e9e4787e23d09",
-      "priceUsd": 28.32,
-      "priceUsdt": 28.34148284399575,
+      "priceUsd": 29.42,
+      "priceUsdt": 29.447061849840004,
       "pairAddress": "0xd10E6245961D697d975963682ECe9979E9917fBC",
-      "liquidityUsd": 229688.3,
+      "liquidityUsd": 234337.35,
       "url": "https://dexscreener.com/robinhood/0xd10e6245961d697d975963682ece9979e9917fbc",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:13.714Z"
+      "fetchedAt": "2026-10-21T06:13:38.625Z"
     },
     "ponsv2-ibm": {
       "symbol": "IBM",
@@ -414,7 +420,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:14.173Z"
+      "fetchedAt": "2026-10-21T06:13:39.157Z"
     },
     "ponsv2-inda": {
       "symbol": "INDA",
@@ -422,7 +428,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:14.672Z"
+      "fetchedAt": "2026-10-21T06:13:39.655Z"
     },
     "ponsv2-jnj": {
       "symbol": "JNJ",
@@ -430,7 +436,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:15.237Z"
+      "fetchedAt": "2026-10-21T06:13:40.153Z"
     },
     "ponsv2-lly": {
       "symbol": "LLY",
@@ -438,7 +444,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:15.672Z"
+      "fetchedAt": "2026-10-21T06:13:40.656Z"
     },
     "ponsv2-lulu": {
       "symbol": "LULU",
@@ -446,18 +452,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:16.175Z"
+      "fetchedAt": "2026-10-21T06:13:41.159Z"
     },
     "ponsv2-meta": {
       "symbol": "META",
       "address": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
-      "priceUsd": 702.48,
-      "priceUsdt": 703.0128837658946,
+      "priceUsd": 698.54,
+      "priceUsdt": 699.1825487623125,
       "pairAddress": "0xa4BdB396a69617eb7F70E2cc1EF526f7340b1B0d",
-      "liquidityUsd": 416108.65,
+      "liquidityUsd": 409802.52,
       "url": "https://dexscreener.com/robinhood/0xa4bdb396a69617eb7f70e2cc1ef526f7340b1b0d",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:16.760Z"
+      "fetchedAt": "2026-10-21T06:13:41.594Z"
     },
     "ponsv2-mrna": {
       "symbol": "MRNA",
@@ -465,7 +471,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:17.254Z"
+      "fetchedAt": "2026-10-21T06:13:42.181Z"
     },
     "ponsv2-mrvl": {
       "symbol": "MRVL",
@@ -473,7 +479,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:17.692Z"
+      "fetchedAt": "2026-10-21T06:13:42.660Z"
     },
     "ponsv2-msft": {
       "symbol": "MSFT",
@@ -481,18 +487,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:18.181Z"
+      "fetchedAt": "2026-10-21T06:13:43.177Z"
     },
     "ponsv2-mstr": {
       "symbol": "MSTR",
       "address": "0xec262a75e413fafd0df80480274532c79d42da09",
-      "priceUsd": 136.8,
-      "priceUsdt": 136.90377305997947,
+      "priceUsd": 144.23,
+      "priceUsdt": 144.36266929308033,
       "pairAddress": "0x70504a6FafdbfB75fE971FAA4dD716e79aC5624c",
-      "liquidityUsd": 509256.81,
+      "liquidityUsd": 590766.66,
       "url": "https://dexscreener.com/robinhood/0x70504a6fafdbfb75fe971faa4dd716e79ac5624c",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:18.674Z"
+      "fetchedAt": "2026-10-21T06:13:43.599Z"
     },
     "ponsv2-mu": {
       "symbol": "MU",
@@ -500,18 +506,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:19.176Z"
+      "fetchedAt": "2026-10-21T06:13:44.157Z"
     },
     "ponsv2-nvda": {
       "symbol": "NVDA",
       "address": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
-      "priceUsd": 216.73,
-      "priceUsdt": 216.89440595971746,
+      "priceUsd": 220.64,
+      "priceUsdt": 220.84295467534662,
       "pairAddress": "0x62AB521f71431f78ac374CdbadC6cda3c8916b6C",
-      "liquidityUsd": 892531.19,
+      "liquidityUsd": 910763.61,
       "url": "https://dexscreener.com/robinhood/0x62ab521f71431f78ac374cdbadc6cda3c8916b6c",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:19.735Z"
+      "fetchedAt": "2026-10-21T06:13:44.600Z"
     },
     "ponsv2-nflx": {
       "symbol": "NFLX",
@@ -519,7 +525,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:20.211Z"
+      "fetchedAt": "2026-10-21T06:13:45.186Z"
     },
     "ponsv2-nu": {
       "symbol": "NU",
@@ -527,7 +533,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:20.723Z"
+      "fetchedAt": "2026-10-21T06:13:45.678Z"
     },
     "ponsv2-pfe": {
       "symbol": "PFE",
@@ -535,7 +541,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:21.232Z"
+      "fetchedAt": "2026-10-21T06:13:46.154Z"
     },
     "ponsv2-pltr": {
       "symbol": "PLTR",
@@ -543,40 +549,40 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:21.677Z"
+      "fetchedAt": "2026-10-21T06:13:46.597Z"
     },
     "ponsv2-qqq": {
       "symbol": "QQQ",
       "address": "0xd5f3879160bc7c32ebb4dc785f8a4f505888de68",
-      "priceUsd": 714.35,
-      "priceUsdt": 714.8918880511428,
+      "priceUsd": 720.84,
+      "priceUsdt": 721.503061313347,
       "pairAddress": "0xA40D00a55d43bA2d188039DCF88bD68f4F133E78",
-      "liquidityUsd": 289626.65,
+      "liquidityUsd": 297511.06,
       "url": "https://dexscreener.com/robinhood/0xa40d00a55d43ba2d188039dcf88bd68f4f133e78",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:22.190Z"
+      "fetchedAt": "2026-10-21T06:13:47.166Z"
     },
     "ponsv2-rblx": {
       "symbol": "RBLX",
       "address": "0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8",
-      "priceUsd": 50.48,
-      "priceUsdt": 50.51829286599242,
+      "priceUsd": 52.059,
+      "priceUsdt": 52.10688622844394,
       "pairAddress": "0x6d25417718A8D6c529130a8ccC4BfBf0a18219D3",
-      "liquidityUsd": 212953.12,
+      "liquidityUsd": 217506.47,
       "url": "https://dexscreener.com/robinhood/0x6d25417718a8d6c529130a8ccc4bfbf0a18219d3",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:22.710Z"
+      "fetchedAt": "2026-10-21T06:13:47.688Z"
     },
     "ponsv2-rddt": {
       "symbol": "RDDT",
       "address": "0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
-      "priceUsd": 154.17,
-      "priceUsdt": 154.28694950772686,
+      "priceUsd": 155.55,
+      "priceUsdt": 155.69308194230499,
       "pairAddress": "0x714187EeD11d8fc9500ff6798734c8BB63a8A19b",
-      "liquidityUsd": 130181.9,
+      "liquidityUsd": 132694.92,
       "url": "https://dexscreener.com/robinhood/0x714187eed11d8fc9500ff6798734c8bb63a8a19b",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:23.184Z"
+      "fetchedAt": "2026-10-21T06:13:48.168Z"
     },
     "ponsv2-rivn": {
       "symbol": "RIVN",
@@ -584,18 +590,18 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:23.677Z"
+      "fetchedAt": "2026-10-21T06:13:48.595Z"
     },
     "ponsv2-sgov": {
       "symbol": "SGOV",
       "address": "0x92fd66527192e3e61d4ddd13322aa222de86f9b5",
-      "priceUsd": 101.64,
-      "priceUsdt": 101.71710156298475,
+      "priceUsd": 101.56,
+      "priceUsdt": 101.65341949251362,
       "pairAddress": "0x7F310e3D05E575Bd449E4484eF5Da15863ea43B1",
-      "liquidityUsd": 123875.81,
+      "liquidityUsd": 125822.15,
       "url": "https://dexscreener.com/robinhood/0x7f310e3d05e575bd449e4484ef5da15863ea43b1",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:24.206Z"
+      "fetchedAt": "2026-10-21T06:13:49.177Z"
     },
     "ponsv2-shop": {
       "symbol": "SHOP",
@@ -603,7 +609,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:24.758Z"
+      "fetchedAt": "2026-10-21T06:13:49.657Z"
     },
     "ponsv2-skhy": {
       "symbol": "SKHY",
@@ -611,7 +617,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:25.193Z"
+      "fetchedAt": "2026-10-21T06:13:50.173Z"
     },
     "ponsv2-slv": {
       "symbol": "SLV",
@@ -619,7 +625,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:25.676Z"
+      "fetchedAt": "2026-10-21T06:13:50.685Z"
     },
     "ponsv2-snap": {
       "symbol": "SNAP",
@@ -627,7 +633,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:26.175Z"
+      "fetchedAt": "2026-10-21T06:13:51.158Z"
     },
     "ponsv2-sndk": {
       "symbol": "SNDK",
@@ -635,40 +641,40 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:26.757Z"
+      "fetchedAt": "2026-10-21T06:13:51.672Z"
     },
     "ponsv2-spcx": {
       "symbol": "SPCX",
       "address": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
-      "priceUsd": 147.27,
-      "priceUsdt": 147.3817153402279,
+      "priceUsd": 161.37,
+      "priceUsdt": 161.51843544217135,
       "pairAddress": "0xC3c9F0171490Ef0F4536fe493F3b0EbB5ee0CB5e",
-      "liquidityUsd": 547229.67,
+      "liquidityUsd": 773936.85,
       "url": "https://dexscreener.com/robinhood/0xc3c9f0171490ef0f4536fe493f3b0ebb5ee0cb5e",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:27.212Z"
+      "fetchedAt": "2026-10-21T06:13:52.181Z"
     },
     "ponsv2-spy": {
       "symbol": "SPY",
       "address": "0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
-      "priceUsd": 767.83,
-      "priceUsdt": 768.4124566421348,
+      "priceUsd": 772.05,
+      "priceUsdt": 772.760166593099,
       "pairAddress": "0xDDCBBa3666f578E3F09516f21Ff85BFee859AB5e",
-      "liquidityUsd": 1958811.77,
+      "liquidityUsd": 2041080.07,
       "url": "https://dexscreener.com/robinhood/0xddcbba3666f578e3f09516f21ff85bfee859ab5e",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:27.679Z"
+      "fetchedAt": "2026-10-21T06:13:52.593Z"
     },
     "ponsv2-tsla": {
       "symbol": "TSLA",
       "address": "0x322f0929c4625ed5bad873c95208d54e1c003b2d",
-      "priceUsd": 364.96,
-      "priceUsdt": 365.2368495319452,
+      "priceUsd": 379.46,
+      "priceUsdt": 379.80904451190645,
       "pairAddress": "0xA953CA88ff430e9487c60cA34d757414f4efdA07",
-      "liquidityUsd": 353705.08,
+      "liquidityUsd": 362285.7,
       "url": "https://dexscreener.com/robinhood/0xa953ca88ff430e9487c60ca34d757414f4efda07",
       "route": "WETH",
-      "fetchedAt": "2026-10-20T06:14:28.228Z"
+      "fetchedAt": "2026-10-21T06:13:53.136Z"
     },
     "ponsv2-tsm": {
       "symbol": "TSM",
@@ -676,7 +682,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:28.677Z"
+      "fetchedAt": "2026-10-21T06:13:53.655Z"
     },
     "ponsv2-ttwo": {
       "symbol": "TTWO",
@@ -684,7 +690,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:29.223Z"
+      "fetchedAt": "2026-10-21T06:13:54.158Z"
     },
     "ponsv2-ups": {
       "symbol": "UPS",
@@ -692,7 +698,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:29.743Z"
+      "fetchedAt": "2026-10-21T06:13:54.670Z"
     },
     "ponsv2-uso": {
       "symbol": "USO",
@@ -700,7 +706,7 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:30.403Z"
+      "fetchedAt": "2026-10-21T06:13:55.160Z"
     },
     "ponsv2-wyfi": {
       "symbol": "WYFI",
@@ -708,37 +714,37 @@
       "priceUsd": null,
       "priceUsdt": null,
       "reason": "no-priced-route-pool",
-      "fetchedAt": "2026-10-20T06:14:30.680Z"
+      "fetchedAt": "2026-10-21T06:13:55.654Z"
     },
     "fourmeme-bnc4": {
       "symbol": "BNC4",
       "address": "0x7c8d5502b544ddaf8852fc46d1174e34876d545c",
-      "priceUsd": 4.642878028799999,
-      "priceUsdt": 4.6464,
+      "priceUsd": 5.3210054979,
+      "priceUsdt": 5.3259,
       "pairAddress": "0xbec6906a984f4695aca0f15bafa7de5eb45b54ab",
-      "liquidityUsd": 773853.29,
+      "liquidityUsd": 857670.72,
       "url": "https://dexscreener.com/bsc/0xbec6906a984f4695aca0f15bafa7de5eb45b54ab",
       "route": "USDT",
-      "fetchedAt": "2026-10-20T06:14:31.267Z"
+      "fetchedAt": "2026-10-21T06:13:56.185Z"
     }
   },
   "nativePricesUsd": {
-    "ETH": 2392.38,
-    "BNB": 728.54,
-    "SOL": 104.35,
-    "HYPE": 78.6,
-    "ASTER": 0.710358,
-    "MYX": 0.056038
+    "ETH": 2436.95,
+    "BNB": 743.04,
+    "SOL": 105.67,
+    "HYPE": 80.66,
+    "ASTER": 0.720271,
+    "MYX": 0.060093
   },
   "nativeSource": "https://api.coingecko.com/api/v3/simple/price?ids=tether,ethereum,binancecoin,solana,hyperliquid,aster-2,myx-finance&vs_currencies=usd&include_last_updated_at=true",
   "nativePriceProvider": "CoinGecko",
   "nativePriceTimestamps": {
-    "USDT": 1792476824,
-    "ETH": 1792476812,
-    "BNB": 1792476812,
-    "SOL": 1792476812,
-    "HYPE": 1792476812,
-    "ASTER": 1792476812,
-    "MYX": 1792476824
+    "USDT": 1792563178,
+    "ETH": 1792563189,
+    "BNB": 1792563178,
+    "SOL": 1792563168,
+    "HYPE": 1792563178,
+    "ASTER": 1792563189,
+    "MYX": 1792563189
   }
 }
